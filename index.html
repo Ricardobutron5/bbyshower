@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8dce8">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Baby Shower Butrón Garcia ">
+    <meta property="og:title" content="Baby Shower Butrón Garcia 👶🏻">
     <meta property="og:description" content="Acompáñanos a celebrar.">
-    <meta property="og:url" content="https://genderreveal-tawny.vercel.app/">
+    <meta property="og:url" content="https://baby-shower-butron-garcia.vercel.app/">
     
     <meta
     property="og:image"
-    content="https://staticstam.tamaulipas.gob.mx:9000/procapet/galeria/invitacion-bg-optimizada.png"
+    content="https://github.com/Ricardobutron5/bbyshower/blob/main/assets/image.png?raw=true"
     >
     
     <meta property="og:image:type" content="image/png">
@@ -20,26 +20,38 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Baby Shower">
     <meta property="og:locale" content="es_MX">
-    <link rel="icon" type="image/png" href="https://staticstam.tamaulipas.gob.mx:9000/procapet/galeria/favicon-revelacion-512.png">
-    <title>Baby Shower</title>
+    <link rel="icon" type="image/png" href="https://github.com/Ricardobutron5/bbyshower/blob/main/assets/icon.png?raw=true">
+    <title>Baby Shower Butrón Garcia</title>
     
     <style>
+        
+        /* =====================================================
+        RESET
+        ===================================================== */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        html,
+        
+        html {
+            width: 100%;
+            min-height: 100%;
+            
+            scroll-behavior: smooth;
+        }
+        
+        
         body {
             width: 100%;
             min-height: 100%;
-        }
-        
-        body {
-            min-height: 100vh;
             
-            font-family: Georgia, "Times New Roman", serif;
+            font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
             
             background:
             radial-gradient(
@@ -50,6 +62,35 @@
             );
             
             overflow: hidden;
+            
+            overscroll-behavior-y: none;
+        }
+        
+        
+        /* =====================================================
+        BODY CUANDO TERMINA LA ANIMACIÓN
+        ===================================================== */
+        
+        body.invitation-ready {
+            overflow-x: hidden;
+            overflow-y: auto;
+            
+            overscroll-behavior-y: auto;
+            
+            -webkit-overflow-scrolling:
+            touch;
+            
+            padding-top:
+            max(
+            10px,
+            env(safe-area-inset-top)
+            );
+            
+            padding-bottom:
+            max(
+            10px,
+            env(safe-area-inset-bottom)
+            );
         }
         
         
@@ -59,9 +100,11 @@
         
         .envelope-screen {
             position: fixed;
+            
             inset: 0;
             
             display: flex;
+            
             align-items: center;
             justify-content: center;
             
@@ -80,13 +123,11 @@
         }
         
         
-        /*
-        * El sobre desaparece,
-        * pero la tarjeta ya habrá sido movida al body.
-        */
         .envelope-screen.hide {
             opacity: 0;
+            
             visibility: hidden;
+            
             pointer-events: none;
         }
         
@@ -98,7 +139,11 @@
         .envelope-wrapper {
             position: relative;
             
-            width: min(88vw, 430px);
+            width:
+            min(
+            88vw,
+            430px
+            );
             
             perspective: 1400px;
             
@@ -111,12 +156,20 @@
             
             width: 100%;
             
-            aspect-ratio: 1.55 / 1;
+            aspect-ratio:
+            1.55 / 1;
             
-            background: #d9b6ab;
+            background:
+            #d9b6ab;
             
             box-shadow:
-            0 25px 60px rgba(70, 40, 35, .23);
+            0 25px 60px
+            rgba(
+            70,
+            40,
+            35,
+            .23
+            );
         }
         
         
@@ -137,21 +190,28 @@
             
             transform:
             translateY(0)
-            rotateY(0deg);
+            rotateX(0deg);
             
             transform-style: preserve-3d;
             
             transition:
-            transform 1.15s cubic-bezier(.22,.61,.36,1);
+            transform
+            1.15s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            );
             
             cursor: default;
         }
         
         
-        /*
-        * Cuando se convierte en tarjeta flotante
-        * JS le colocará left/top/width/height.
-        */
+        /* =====================================================
+        TARJETA FLOTANTE DURANTE ANIMACIÓN
+        ===================================================== */
+        
         .baby-card.floating {
             position: fixed;
             
@@ -160,15 +220,57 @@
             z-index: 3000;
             
             transition:
-            left 1.3s cubic-bezier(.22,.61,.36,1),
-            top 1.3s cubic-bezier(.22,.61,.36,1),
-            width 1.3s cubic-bezier(.22,.61,.36,1),
-            height 1.3s cubic-bezier(.22,.61,.36,1),
-            transform 1.3s cubic-bezier(.22,.61,.36,1),
-            border-radius 1.3s ease,
-            box-shadow 1.3s ease;
+            left
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            top
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            width
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            height
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            transform
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            border-radius
+            1.3s ease,
+            
+            box-shadow
+            1.3s ease;
         }
-        
         
         /* =====================================================
         CARAS DE LA TARJETA
@@ -176,37 +278,45 @@
         
         .card-face {
             position: absolute;
+            
             inset: 0;
             
-            background: #fffdfb;
+            background:
+            #fffdfb;
             
             border-radius: 4px;
             
             overflow: hidden;
             
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
+            backface-visibility:
+            hidden;
+            
+            -webkit-backface-visibility:
+            hidden;
             
             box-shadow:
-            0 8px 25px rgba(0, 0, 0, .12);
+            0 8px 25px
+            rgba(
+            0,
+            0,
+            0,
+            .12
+            );
         }
         
         
-        /*
-        * Frente
-        */
         .card-front-face {
-            transform: rotateY(0deg);
+            transform:
+            rotateY(0deg);
         }
         
         
-        /*
-        * Reverso
-        */
         .card-back-face {
-            transform: rotateY(180deg);
+            transform:
+            rotateX(180deg);
             
             display: flex;
+            
             align-items: center;
             justify-content: center;
             
@@ -216,7 +326,8 @@
             
             padding: 30px;
             
-            color: #8e6d63;
+            color:
+            #8e6d63;
             
             background:
             radial-gradient(
@@ -227,29 +338,35 @@
         }
         
         
-        .card-back-face .back-icon {
+        .card-back-face
+        .back-icon {
             font-size: 3rem;
+            
             margin-bottom: 15px;
         }
         
         
         .card-back-face p {
             font-size: .75rem;
+            
             letter-spacing: 3px;
             
-            text-transform: uppercase;
+            text-transform:
+            uppercase;
         }
         
         
         /* =====================================================
-        CONTENIDO PEQUEÑO
+        CONTENIDO RESUMIDO
         ===================================================== */
         
         .card-summary {
             position: absolute;
+            
             inset: 0;
             
             display: flex;
+            
             align-items: center;
             justify-content: center;
             
@@ -267,27 +384,32 @@
         }
         
         
-        .card-summary .small-text {
+        .card-summary
+        .small-text {
             font-size: .7rem;
             
             letter-spacing: 4px;
             
-            color: #a98578;
+            color:
+            #a98578;
             
             margin-bottom: 12px;
         }
         
         
         .card-summary h2 {
-            color: #8b6559;
+            color:
+            #8b6559;
             
-            font-size: clamp(
+            font-size:
+            clamp(
             1.7rem,
             6vw,
             2.8rem
             );
             
-            font-weight: normal;
+            font-weight:
+            normal;
             
             line-height: 1;
         }
@@ -296,7 +418,8 @@
         .card-summary p {
             margin-top: 12px;
             
-            color: #a98578;
+            color:
+            #a98578;
             
             font-size: .8rem;
         }
@@ -308,13 +431,15 @@
         
         .full-invitation {
             position: absolute;
+            
             inset: 0;
             
             opacity: 0;
             
-            pointer-events: none;
+            pointer-events:
+            none;
             
-            overflow-y: auto;
+            overflow: hidden;
             
             padding:
             55px
@@ -323,9 +448,11 @@
             
             text-align: center;
             
-            color: #73584f;
+            color:
+            #73584f;
             
-            transform: scale(.96);
+            transform:
+            scale(.96);
             
             transition:
             opacity .8s ease,
@@ -333,94 +460,229 @@
         }
         
         
-        /*
-        * Scroll bonito
-        */
-        .full-invitation::-webkit-scrollbar {
-            width: 5px;
-        }
-        
-        .full-invitation::-webkit-scrollbar-thumb {
-            background: rgba(143, 107, 96, .35);
+        .baby-card.expanded
+        .card-summary {
+            display: none;
+            /* opacity: 0;
             
-            border-radius: 20px;
+            transform:
+            scale(.94);
+            
+            pointer-events:
+            none; */
         }
-        
-        
-        /*
-        * Cuando termina de crecer
-        */
-        .baby-card.expanded .card-summary {
+        .baby-card.expanded
+        .card-back-face {
             opacity: 0;
             
-            transform: scale(.94);
+            transform:
+            scale(.94);
             
-            pointer-events: none;
+            pointer-events:
+            none;
         }
         
-        
-        .baby-card.expanded .full-invitation {
+        .baby-card.expanded
+        .full-invitation {
             opacity: 1;
             
-            transform: scale(1);
+            transform:
+            scale(1);
             
-            pointer-events: auto;
+            pointer-events:
+            auto;
         }
         
         
         /* =====================================================
-        DISEÑO DE LA INVITACIÓN
+        ESTADO FINAL
+        YA NO USA FIXED
+        ===================================================== */
+        
+        .baby-card.settled {
+            position: relative !important;
+            
+            left: auto !important;
+            right: auto !important;
+            
+            top: auto !important;
+            bottom: auto !important;
+            
+            width:
+            min(
+            calc(
+            100vw - 20px
+            ),
+            560px
+            ) !important;
+            
+            height:
+            auto !important;
+            
+            min-height:
+            calc(
+            100dvh - 20px
+            );
+            
+            margin:
+            0 auto;
+            
+            transform:
+            none !important;
+            
+            transition:
+            none !important;
+            
+            perspective:
+            none;
+            
+            overflow:
+            visible;
+            
+            border-radius:
+            8px;
+            
+            box-shadow:
+            0 20px 60px
+            rgba(
+            65,
+            35,
+            30,
+            .18
+            );
+        }
+        
+        
+        .baby-card.settled
+        .card-front-face {
+            position: relative;
+            
+            inset: auto;
+            
+            width: 100%;
+            
+            height: auto;
+            
+            min-height:
+            calc(
+            100dvh - 20px
+            );
+            
+            overflow:
+            visible;
+            
+            transform:
+            none;
+        }
+        
+        
+        .baby-card.settled
+        .card-back-face {
+            display: none;
+        }
+        
+        
+        .baby-card.settled
+        .card-summary {
+            display: none;
+        }
+        
+        
+        .baby-card.settled
+        .full-invitation {
+            position: relative;
+            
+            inset: auto;
+            
+            width: 100%;
+            
+            min-height:
+            calc(
+            100dvh - 20px
+            );
+            
+            overflow:
+            visible;
+            
+            opacity: 1;
+            
+            transform:
+            none;
+            
+            pointer-events:
+            auto;
+        }
+        
+        
+        /* =====================================================
+        DECORACIÓN
         ===================================================== */
         
         .baby-decoration {
-            font-size: 2.6rem;
+            font-size:
+            2.6rem;
             
-            margin-bottom: 20px;
+            margin-bottom:
+            20px;
         }
         
         
         .invitation-small-title {
-            text-transform: uppercase;
+            text-transform:
+            uppercase;
             
-            font-size: .72rem;
+            font-size:
+            .72rem;
             
-            letter-spacing: 5px;
+            letter-spacing:
+            5px;
             
-            color: #a98275;
+            color:
+            #a98275;
             
-            margin-bottom: 22px;
+            margin-bottom:
+            22px;
         }
         
         
         .full-invitation h1 {
-            font-size: clamp(
+            font-size:
+            clamp(
             3rem,
             8vw,
             5.2rem
             );
             
-            font-weight: normal;
+            font-weight:
+            normal;
             
-            line-height: .95;
+            line-height:
+            .95;
             
-            color: #8f6b60;
+            color:
+            #8f6b60;
             
-            margin-bottom: 30px;
+            margin-bottom:
+            30px;
         }
         
         
         .intro {
-            max-width: 380px;
+            max-width:
+            380px;
             
             margin:
             0 auto
             35px;
             
-            font-size: .98rem;
+            font-size:
+            .98rem;
             
-            line-height: 1.8;
+            line-height:
+            1.8;
             
-            color: #846c64;
+            color:
+            #846c64;
         }
         
         
@@ -434,13 +696,16 @@
             align-items: center;
             justify-content: center;
             
-            max-width: 390px;
+            max-width:
+            390px;
             
             margin:
             0 auto
             35px;
             
-            padding: 22px 5px;
+            padding:
+            22px
+            5px;
             
             border-top:
             1px solid
@@ -455,24 +720,30 @@
         .date-side {
             width: 32%;
             
-            font-size: .72rem;
+            font-size:
+            .72rem;
             
-            letter-spacing: 2px;
+            letter-spacing:
+            2px;
             
-            text-transform: uppercase;
+            text-transform:
+            uppercase;
             
-            color: #927a72;
+            color:
+            #927a72;
         }
         
         
         .date-number {
             width: 36%;
             
-            font-size: 3.4rem;
+            font-size:
+            3.4rem;
             
             line-height: 1;
             
-            color: #8f6b60;
+            color:
+            #8f6b60;
             
             border-left:
             1px solid
@@ -489,31 +760,40 @@
         ===================================================== */
         
         .event-time {
-            margin-bottom: 35px;
+            margin-bottom:
+            35px;
         }
         
         
         .event-time span {
             display: block;
             
-            font-size: .72rem;
+            font-size:
+            .72rem;
             
-            letter-spacing: 3px;
+            letter-spacing:
+            3px;
             
-            text-transform: uppercase;
+            text-transform:
+            uppercase;
             
-            color: #a98275;
+            color:
+            #a98275;
             
-            margin-bottom: 7px;
+            margin-bottom:
+            7px;
         }
         
         
         .event-time strong {
-            font-size: 1.35rem;
+            font-size:
+            1.35rem;
             
-            font-weight: normal;
+            font-weight:
+            normal;
             
-            color: #73584f;
+            color:
+            #73584f;
         }
         
         
@@ -522,41 +802,53 @@
         ===================================================== */
         
         .location {
-            margin-top: 25px;
+            margin-top:
+            25px;
         }
         
         
         .location-icon {
-            font-size: 1.7rem;
+            font-size:
+            1.7rem;
             
-            margin-bottom: 12px;
+            margin-bottom:
+            12px;
         }
         
         
         .location h3 {
-            font-size: 1.15rem;
+            font-size:
+            1.15rem;
             
-            font-weight: normal;
+            font-weight:
+            normal;
             
-            color: #73584f;
+            color:
+            #73584f;
             
-            margin-bottom: 9px;
+            margin-bottom:
+            9px;
         }
         
         
         .location p {
-            font-size: .88rem;
+            font-size:
+            .88rem;
             
-            line-height: 1.7;
+            line-height:
+            1.7;
             
-            color: #927c75;
+            color:
+            #927c75;
         }
         
         
         .btn-location {
-            display: inline-block;
+            display:
+            inline-block;
             
-            margin-top: 23px;
+            margin-top:
+            23px;
             
             padding:
             12px
@@ -566,15 +858,20 @@
             1px solid
             #aa8276;
             
-            color: #8d685e;
+            color:
+            #8d685e;
             
-            text-decoration: none;
+            text-decoration:
+            none;
             
-            border-radius: 30px;
+            border-radius:
+            30px;
             
-            font-size: .8rem;
+            font-size:
+            .8rem;
             
-            letter-spacing: 1px;
+            letter-spacing:
+            1px;
             
             transition:
             background .3s ease,
@@ -584,9 +881,11 @@
         
         
         .btn-location:hover {
-            background: #aa8276;
+            background:
+            #aa8276;
             
-            color: #fff;
+            color:
+            #fff;
             
             transform:
             translateY(-2px);
@@ -598,27 +897,37 @@
         ===================================================== */
         
         .footer-message {
-            margin-top: 40px;
+            margin-top:
+            40px;
             
-            font-style: italic;
+            margin-bottom:
+            20px;
             
-            font-size: .9rem;
+            font-style:
+            italic;
             
-            color: #a18177;
+            font-size:
+            .9rem;
+            
+            color:
+            #a18177;
         }
         
         
         /* =====================================================
-        SOBRE - PARTE DELANTERA
+        SOBRE
         ===================================================== */
         
         .envelope-left {
             position: absolute;
+            
             inset: 0;
             
-            background: #dfbeb4;
+            background:
+            #dfbeb4;
             
-            clip-path: polygon(
+            clip-path:
+            polygon(
             0 0,
             52% 58%,
             0 100%
@@ -630,11 +939,14 @@
         
         .envelope-right {
             position: absolute;
+            
             inset: 0;
             
-            background: #d4ada2;
+            background:
+            #d4ada2;
             
-            clip-path: polygon(
+            clip-path:
+            polygon(
             100% 0,
             48% 58%,
             100% 100%
@@ -646,11 +958,14 @@
         
         .envelope-bottom {
             position: absolute;
+            
             inset: 0;
             
-            background: #e8c9c0;
+            background:
+            #e8c9c0;
             
-            clip-path: polygon(
+            clip-path:
+            polygon(
             0 100%,
             50% 43%,
             100% 100%
@@ -673,9 +988,11 @@
             width: 100%;
             height: 59%;
             
-            background: #e5c5bc;
+            background:
+            #e5c5bc;
             
-            clip-path: polygon(
+            clip-path:
+            polygon(
             0 0,
             100% 0,
             50% 100%
@@ -696,9 +1013,19 @@
             z-index: 6;
             
             transition:
-            transform .9s
-            cubic-bezier(.4,0,.2,1),
-            z-index 0s linear .45s;
+            transform
+            .9s
+            cubic-bezier(
+            .4,
+            0,
+            .2,
+            1
+            ),
+            
+            z-index
+            0s
+            linear
+            .45s;
         }
         
         
@@ -713,14 +1040,19 @@
             top: 50%;
             
             transform:
-            translate(-50%, -50%);
+            translate(
+            -50%,
+            -50%
+            );
             
             width: 65px;
             height: 65px;
             
-            border-radius: 50%;
+            border-radius:
+            50%;
             
             display: flex;
+            
             align-items: center;
             justify-content: center;
             
@@ -733,13 +1065,19 @@
             
             color: #fff;
             
-            font-size: 1.5rem;
+            font-size:
+            1.5rem;
             
             z-index: 8;
             
             box-shadow:
             0 5px 15px
-            rgba(0, 0, 0, .18);
+            rgba(
+            0,
+            0,
+            0,
+            .18
+            );
             
             transition:
             opacity .3s ease,
@@ -748,7 +1086,7 @@
         
         
         /* =====================================================
-        TEXTO "TOCA"
+        TEXTO TOCA PARA ABRIR
         ===================================================== */
         
         .open-label {
@@ -759,16 +1097,22 @@
             
             width: 100%;
             
-            text-align: center;
+            text-align:
+            center;
             
-            font-size: .78rem;
+            font-size:
+            .78rem;
             
-            letter-spacing: 3px;
+            letter-spacing:
+            3px;
             
-            color: #896d65;
+            color:
+            #896d65;
             
             animation:
-            pulse 2s infinite;
+            pulse
+            2s
+            infinite;
             
             transition:
             opacity .4s ease;
@@ -790,70 +1134,96 @@
         
         
         /* =====================================================
-        PASO 1: ABRIR SOBRE
+        PASO 1
+        ABRIR SOBRE
         ===================================================== */
         
-        .envelope-wrapper.open .flap {
+        .envelope-wrapper.open
+        .flap {
             transform:
-            rotateX(180deg);
+            rotateX(
+            180deg
+            );
             
             z-index: 0;
         }
         
         
-        .envelope-wrapper.open .seal {
+        .envelope-wrapper.open
+        .seal {
             opacity: 0;
             
             transform:
-            translate(-50%, -50%)
+            translate(
+            -50%,
+            -50%
+            )
             scale(.4);
         }
         
         
-        .envelope-wrapper.open .open-label {
+        .envelope-wrapper.open
+        .open-label {
             opacity: 0;
         }
         
         
         /* =====================================================
-        PASO 2: SALIR DEL SOBRE
+        PASO 2
+        SACAR TARJETA
         ===================================================== */
         
-        .envelope-wrapper.card-out .baby-card {
+        .envelope-wrapper.card-out
+        .baby-card {
             transform:
-            translateY(-82%)
-            rotateY(0deg);
+            translateY(
+            -82%
+            )
+            rotateX(
+            0deg
+            );
             
             z-index: 10;
         }
         
         
         /* =====================================================
-        PASO 3: GIRAR HORIZONTALMENTE
+        PASO 3
+        GIRAR TARJETA
         ===================================================== */
         
-        .envelope-wrapper.card-rotate .baby-card {
+        .envelope-wrapper.card-rotate
+        .baby-card {
             transform:
-            translateY(-82%)
-            rotateY(540deg);
+            translateY(
+            -82%
+            )
+            rotateX(
+            540deg
+            );
             
             z-index: 10;
         }
         
         
         /* =====================================================
-        DECORACIONES
+        DECORACIONES DE ESQUINA
         ===================================================== */
         
         .corner-decoration {
             position: absolute;
             
-            width: 130px;
-            height: 130px;
+            width:
+            130px;
             
-            opacity: .16;
+            height:
+            130px;
             
-            pointer-events: none;
+            opacity:
+            .16;
+            
+            pointer-events:
+            none;
         }
         
         
@@ -861,9 +1231,11 @@
         .corner-decoration::after {
             content: "";
             
-            position: absolute;
+            position:
+            absolute;
             
-            border-radius: 50%;
+            border-radius:
+            50%;
             
             border:
             1px solid
@@ -872,38 +1244,59 @@
         
         
         .corner-decoration::before {
-            width: 85px;
-            height: 35px;
+            width:
+            85px;
+            
+            height:
+            35px;
             
             transform:
-            rotate(45deg);
+            rotate(
+            45deg
+            );
         }
         
         
         .corner-decoration::after {
-            width: 50px;
-            height: 22px;
+            width:
+            50px;
             
-            top: 25px;
-            left: 35px;
+            height:
+            22px;
+            
+            top:
+            25px;
+            
+            left:
+            35px;
             
             transform:
-            rotate(-25deg);
+            rotate(
+            -25deg
+            );
         }
         
         
         .corner-top {
-            top: 15px;
-            left: 10px;
+            top:
+            15px;
+            
+            left:
+            10px;
         }
         
         
         .corner-bottom {
-            right: 10px;
-            bottom: 5px;
+            right:
+            10px;
+            
+            bottom:
+            5px;
             
             transform:
-            rotate(180deg);
+            rotate(
+            180deg
+            );
         }
         
         
@@ -911,18 +1304,25 @@
         MOBILE
         ===================================================== */
         
-        @media(max-width: 576px) {
+        @media(
+        max-width: 576px
+        ) {
             
             .envelope-wrapper {
-                width: 86vw;
+                width:
+                86vw;
             }
             
             
             .seal {
-                width: 56px;
-                height: 56px;
+                width:
+                56px;
                 
-                font-size: 1.25rem;
+                height:
+                56px;
+                
+                font-size:
+                1.25rem;
             }
             
             
@@ -930,60 +1330,103 @@
                 padding:
                 42px
                 24px
-                40px;
+                45px;
+            }
+            
+            
+            .baby-card.settled {
+                width:
+                calc(
+                100vw - 20px
+                )
+                !important;
+                
+                min-height:
+                calc(
+                100dvh - 20px
+                );
+            }
+            
+            
+            .baby-card.settled
+            .card-front-face {
+                min-height:
+                calc(
+                100dvh - 20px
+                );
+            }
+            
+            
+            .baby-card.settled
+            .full-invitation {
+                min-height:
+                calc(
+                100dvh - 20px
+                );
             }
             
             
             .full-invitation h1 {
-                font-size: 3.2rem;
+                font-size:
+                3.2rem;
             }
             
             
             .intro {
-                font-size: .9rem;
+                font-size:
+                .9rem;
             }
             
             
             .date {
-                margin-bottom: 28px;
+                margin-bottom:
+                28px;
             }
             
             
             .date-number {
-                font-size: 2.8rem;
+                font-size:
+                2.8rem;
             }
             
             
             .date-side {
-                font-size: .64rem;
+                font-size:
+                .64rem;
             }
             
         }
         
         
         /* =====================================================
-        PANTALLAS MUY PEQUEÑAS
+        PANTALLAS BAJAS
         ===================================================== */
         
-        @media(max-height: 650px) {
+        @media(
+        max-height: 650px
+        ) {
             
             .full-invitation {
-                padding-top: 30px;
+                padding-top:
+                30px;
             }
             
             
             .baby-decoration {
-                margin-bottom: 10px;
+                margin-bottom:
+                10px;
             }
             
             
             .invitation-small-title {
-                margin-bottom: 15px;
+                margin-bottom:
+                15px;
             }
             
             
             .full-invitation h1 {
-                margin-bottom: 20px;
+                margin-bottom:
+                20px;
             }
             
         }
@@ -1209,7 +1652,7 @@ este momento contigo!
 REVERSO
 ============================================== -->
 
-<div
+<div id="card-back-face"
 class="
 card-face
 card-back-face
@@ -1277,8 +1720,10 @@ TOCA PARA ABRIR
 </div>
 
 </section>
-
-
+<audio id="bgMusic" loop preload="auto">
+    <source src="assets/youll-be-in-my-heart-piano-cover-phil-collins.mp3" type="audio/mpeg">
+</audio>
+<script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 <script>
     
     const envelopeWrapper =
@@ -1286,10 +1731,12 @@ TOCA PARA ABRIR
     'envelopeWrapper'
     );
     
+    
     const envelopeScreen =
     document.getElementById(
     'envelopeScreen'
     );
+    
     
     const babyCard =
     document.getElementById(
@@ -1304,10 +1751,6 @@ TOCA PARA ABRIR
     'click',
     function () {
         
-        /*
-        * Evitar que se ejecute
-        * más de una vez.
-        */
         if (opened) {
             return;
         }
@@ -1317,176 +1760,167 @@ TOCA PARA ABRIR
         
         
         /*
-        * =================================================
+        * =============================================
         * PASO 1
-        *
-        * Abrir la solapa del sobre.
-        * =================================================
+        * ABRIR SOBRE
+        * =============================================
         */
         
         envelopeWrapper
         .classList
-        .add('open');
+        .add(
+        'open'
+        );
         
         
         /*
-        * =================================================
+        * =============================================
         * PASO 2
-        *
-        * Sacar la tarjeta.
-        * =================================================
+        * SACAR TARJETA
+        * =============================================
         */
         
         setTimeout(() => {
             
             envelopeWrapper
             .classList
-            .add('card-out');
+            .add(
+            'card-out'
+            );
             
         }, 700);
         
         
         /*
-        * =================================================
+        * =============================================
         * PASO 3
-        *
-        * Girar horizontalmente.
-        *
-        * rotateY = giro sobre
-        * el eje vertical.
-        * =================================================
+        * GIRAR 360°
+        * =============================================
         */
         
         setTimeout(() => {
             
             envelopeWrapper
             .classList
-            .add('card-rotate');
+            .add(
+            'card-rotate'
+            );
             
-        }, 1800);
+        }, 2500);
         
         
         /*
-        * =================================================
+        * =============================================
         * PASO 4
-        *
-        * Cuando termina el giro,
-        * convertir la tarjeta en
-        * elemento flotante.
-        * =================================================
+        * EXPANDIR
+        * =============================================
         */
         
         setTimeout(() => {
             
             expandCard();
             
-        }, 3150);
+        }, 3550);
         
     }
     );
     
     
-    /*
-    * =========================================================
-    * EXPANDIR TARJETA
-    * =========================================================
-    */
+    /* =====================================================
+    EXPANDIR TARJETA
+    ===================================================== */
     
     function expandCard() {
         
         /*
-        * Obtener posición y tamaño
-        * EXACTOS que tiene actualmente.
+        * Obtener posición actual.
         */
         const rect =
-        babyCard.getBoundingClientRect();
+        babyCard
+        .getBoundingClientRect();
         
         
         /*
-        * Mover la tarjeta fuera
-        * del sobre y directamente
-        * al body.
-        *
-        * Así podemos borrar el
-        * sobre sin borrar la tarjeta.
+        * Mover la tarjeta al body.
         */
-        document.body.appendChild(
+        document.body
+        .appendChild(
         babyCard
         );
         
-        
+        $('#card-back-face').css('transform', 'rotate(0deg)')
         /*
-        * Convertirla en fixed pero
-        * manteniendo exactamente
-        * la misma posición visual.
+        * Convertirla temporalmente
+        * en fixed.
         */
-        babyCard.classList.add(
-        'floating'
+       babyCard
+       .classList
+        .add(
+            'floating'
         );
         
-        
+
+
+        /*
+        * Mantener la posición exacta.
+        */
         babyCard.style.left =
         `${rect.left}px`;
+        
         
         babyCard.style.top =
         `${rect.top}px`;
         
+        
         babyCard.style.width =
         `${rect.width}px`;
         
+        
         babyCard.style.height =
         `${rect.height}px`;
+        
         
         babyCard.style.bottom =
         'auto';
         
         
-        /*
-        * Como ya giró 360 grados,
-        * mantenemos esa rotación.
-        */
         babyCard.style.transform =
-        'rotateY(360deg)';
+        'rotateX(360deg)';
         
         
         /*
-        * Forzar al navegador a
-        * registrar estos valores
-        * antes de iniciar la
-        * siguiente transición.
+        * Forzar reflow.
         */
-        babyCard.getBoundingClientRect();
+        babyCard
+        .getBoundingClientRect();
         
         
-        /*
-        * Esperamos dos frames para
-        * garantizar la animación.
-        */
         requestAnimationFrame(() => {
             
             requestAnimationFrame(() => {
                 
                 
                 /*
-                * =============================================
-                * PASO 5
-                *
-                * Centrar y hacer grande
-                * la tarjeta.
-                * =============================================
+                * =========================================
+                * CENTRAR
+                * =========================================
                 */
                 
                 babyCard.style.left =
                 '50%';
                 
+                
                 babyCard.style.top =
                 '50%';
+                
                 
                 babyCard.style.width =
                 'min(92vw, 560px)';
                 
+                
                 babyCard.style.height =
-                'min(92vh, 820px)';
+                'min(92dvh, 820px)';
+                
                 
                 babyCard.style.transform =
                 `
@@ -1494,11 +1928,15 @@ TOCA PARA ABRIR
                                 -50%,
                                 -50%
                             )
-                            rotateY(360deg)
+                            rotateX(
+                                360deg
+                            )
                         `;
+                
                 
                 babyCard.style.borderRadius =
                 '8px';
+                
                 
                 babyCard.style.boxShadow =
                 `
@@ -1513,48 +1951,134 @@ TOCA PARA ABRIR
                 
                 
                 /*
-                * =============================================
-                * PASO 6
-                *
-                * Desaparecer el sobre.
-                * =============================================
+                * =========================================
+                * DESAPARECER SOBRE
+                * =========================================
                 */
                 
                 setTimeout(() => {
                     
                     envelopeScreen
                     .classList
-                    .add('hide');
+                    .add(
+                    'hide'
+                    );
                     
                 }, 250);
                 
                 
                 /*
-                * =============================================
-                * PASO 7
-                *
-                * Cuando la tarjeta ya
-                * está casi expandida,
-                * mostrar todo el
-                * contenido.
-                * =============================================
+                * =========================================
+                * MOSTRAR CONTENIDO
+                * =========================================
                 */
                 
                 setTimeout(() => {
                     
                     babyCard
                     .classList
-                    .add('expanded');
+                    .add(
+                    'expanded'
+                    );
+                    
+                }, 900);
+                
+
+                /*
+                * =========================================
+                * CONVERTIR A SCROLL NORMAL
+                * =========================================
+                */
+                
+                setTimeout(() => {
+                    
                     
                     /*
-                    * Ya permitimos scroll
-                    * de la página si fuera
-                    * necesario.
+                    * Quitar definitivamente
+                    * el sobre.
                     */
-                    document.body.style
-                    .overflow = 'auto';
+                    envelopeScreen
+                    .style
+                    .display =
+                    'none';
                     
-                }, 1050);
+                    
+                    /*
+                    * Limpiar estilos usados
+                    * en la animación.
+                    */
+                    babyCard.style.left =
+                    '';
+                    
+                    
+                    babyCard.style.top =
+                    '';
+                    
+                    
+                    babyCard.style.width =
+                    '';
+                    
+                    
+                    babyCard.style.height =
+                    '';
+                    
+                    
+                    babyCard.style.bottom =
+                    '';
+                    
+                    
+                    babyCard.style.transform =
+                    '';
+                    
+                    
+                    babyCard.style.borderRadius =
+                    '';
+                    
+                    
+                    babyCard.style.boxShadow =
+                    '';
+                    
+                    
+                    /*
+                    * Quitar fixed.
+                    */
+                    babyCard
+                    .classList
+                    .remove(
+                    'floating'
+                    );
+                    
+                    
+                    /*
+                    * Activar estado final.
+                    */
+                    babyCard
+                    .classList
+                    .add(
+                    'settled'
+                    );
+                    
+                    
+                    /*
+                    * Permitir scroll del body.
+                    */
+                    document.body
+                    .classList
+                    .add(
+                    'invitation-ready'
+                    );
+                    
+                    
+                    /*
+                    * Ir al inicio.
+                    */
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'instant'
+                    });
+                    
+                }, 1800);
                 
             });
             
@@ -1563,6 +2087,25 @@ TOCA PARA ABRIR
     }
     
 </script>
-
+<script>
+    const music = document.getElementById('bgMusic');
+    
+    const startMusic = async () => {
+        try {
+            music.currentTime = 03;
+            await music.play();
+            console.log('playing');
+            
+        } catch (e) {
+            console.log('Autoplay bloqueado', e);
+        }
+        
+        document.removeEventListener('click', startMusic);
+        document.removeEventListener('touchstart', startMusic);
+    };
+    
+    document.addEventListener('click', startMusic);
+    document.addEventListener('touchstart', startMusic);
+</script>
 </body>
 </html>
