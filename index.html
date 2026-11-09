@@ -21,6 +21,8 @@
     <meta property="og:site_name" content="Baby Shower">
     <meta property="og:locale" content="es_MX">
     <link rel="icon" type="image/png" href="https://github.com/Ricardobutron5/bbyshower/blob/main/assets/icon.png?raw=true">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Baby Shower Butrón Garcia</title>
     
     <style>
@@ -891,6 +893,275 @@
             translateY(-2px);
         }
         
+        /* =====================================================
+   MESA DE REGALOS
+===================================================== */
+
+.gift-registry {
+    position: relative;
+
+    max-width: 390px;
+
+    margin:
+        45px auto
+        10px;
+
+    padding:
+        30px
+        25px;
+
+    border:
+        1px solid
+        rgba(
+            170,
+            130,
+            118,
+            .35
+        );
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 250, 247, .95),
+            rgba(248, 237, 232, .85)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            100,
+            65,
+            55,
+            .08
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decoración tenue */
+
+.gift-registry::before {
+    content: "♡";
+
+    position: absolute;
+
+    right: 15px;
+    top: 5px;
+
+    font-size: 4.5rem;
+
+    color:
+        rgba(
+            170,
+            130,
+            118,
+            .07
+        );
+
+    pointer-events: none;
+}
+
+
+.gift-icon {
+    width: 58px;
+    height: 58px;
+
+    margin:
+        0 auto
+        18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #f4e2dc;
+
+    color:
+        #8f6b60;
+
+    font-size: 1.7rem;
+}
+
+
+.gift-registry .gift-small-title {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: .68rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color:
+        #a98275;
+}
+
+
+.gift-registry h3 {
+    margin-bottom: 13px;
+
+    font-size: 1.35rem;
+
+    font-weight: normal;
+
+    color:
+        #73584f;
+}
+
+
+.gift-registry .gift-text {
+    max-width: 320px;
+
+    margin:
+        0 auto
+        20px;
+
+    font-size: .88rem;
+
+    line-height: 1.7;
+
+    color:
+        #927c75;
+}
+
+
+.gift-store {
+    margin:
+        20px auto;
+
+    padding:
+        18px
+        15px;
+
+    border-top:
+        1px solid
+        #ead8d1;
+
+    border-bottom:
+        1px solid
+        #ead8d1;
+}
+
+
+.gift-store-name {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: .75rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color:
+        #a98275;
+}
+
+
+.gift-number-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: .7rem;
+
+    color:
+        #a58a82;
+}
+
+
+.gift-number {
+    display: block;
+
+    font-size: 1.45rem;
+
+    letter-spacing: 2px;
+
+    color:
+        #73584f;
+}
+
+
+.btn-gift {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding:
+        12px
+        30px;
+
+    border:
+        1px solid
+        #aa8276;
+
+    border-radius:
+        30px;
+
+    color:
+        #8d685e;
+
+    background:
+        transparent;
+
+    text-decoration:
+        none;
+
+    font-size: .78rem;
+
+    letter-spacing: 1px;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.btn-gift:hover {
+    background:
+        #aa8276;
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 576px) {
+
+    .gift-registry {
+        margin-top: 35px;
+
+        padding:
+            25px
+            18px;
+    }
+
+
+    .gift-number {
+        font-size:
+            1.25rem;
+    }
+
+}
         
         /* =====================================================
         MENSAJE FINAL
@@ -1572,7 +1843,7 @@ Acompáñanos a celebrar
 <div
 class="date-number"
 >
-12
+05
 </div>
 
 <div
@@ -1615,17 +1886,19 @@ class="location-icon"
 </div>
 
 <h3>
-    Salón del evento
+    Salón Don Julian
 </h3>
 
 <p>
-    Ciudad Victoria,
+    Calle Licenciado Zeferino Fajardo Luna 426
+    Colinas del Valle
+    87018 Ciudad Victoria
     Tamaulipas
 </p>
 
 
 <a
-href="https://maps.google.com"
+href="https://maps.apple/p/aumf4vSLKhf~JP"
 target="_blank"
 rel="noopener noreferrer"
 class="btn-location"
@@ -1635,6 +1908,81 @@ VER UBICACIÓN
 
 </div>
 
+<!-- =====================================================
+     MESA DE REGALOS
+====================================================== -->
+
+<div class="gift-registry">
+
+    <div class="gift-icon">
+        <i class='bx bx-gift' ></i>
+    </div>
+
+
+    <span class="gift-small-title">
+        Si deseas hacernos un regalo
+    </span>
+
+
+    <h3>
+        Mesa de regalos
+    </h3>
+
+
+    <p class="gift-text">
+        Tu presencia es nuestro mejor regalo,
+        pero si deseas tener un detalle con
+        nuestro bebé, hemos preparado una
+        mesa de regalos.
+    </p>
+
+
+    <div class="gift-store">
+
+        <span class="gift-store-name">
+            Liverpool
+        </span>
+
+
+        <span class="gift-number-label">
+            Número de evento
+        </span>
+
+
+        <strong class="gift-number">
+            60042460
+        </strong>
+
+    </div>
+    <div class="gift-store">
+
+        <span class="gift-store-name">
+            BBVA
+        </span>
+
+
+        <span class="gift-number-label">
+            Número de tarjeta
+        </span>
+
+
+        <strong class="gift-number">
+            4152 3145 8240 3112
+        </strong>
+
+    </div>
+
+
+    <!-- <a
+        href="https://mesaderegalos.liverpool.com.mx/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-gift"
+    >
+        VER MESA DE REGALOS
+    </a> -->
+
+</div>
 
 <div
 class="footer-message"
