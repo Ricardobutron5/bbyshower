@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f8dce8">
+    <meta name="theme-color" content="#F6C453">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Baby Shower Butrón Garcia 👶🏻">
     <meta property="og:description" content="Acompáñanos a celebrar.">
     <meta property="og:url" content="https://baby-shower-butron-garcia.vercel.app/">
-    
+    <meta name="format-detection" content="telephone=no">
     <meta
     property="og:image"
     content="https://github.com/Ricardobutron5/bbyshower/blob/main/assets/image.png?raw=true"
@@ -1162,6 +1162,290 @@
     }
 
 }
+
+/* =====================================================
+   OPCIONES DE REGALO
+===================================================== */
+
+.gift-option {
+    position: relative;
+
+    margin-top: 20px;
+
+    padding:
+        25px
+        20px;
+
+    border:
+        1px solid
+        rgba(
+            170,
+            130,
+            118,
+            .25
+        );
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            255,
+            253,
+            251,
+            .75
+        );
+}
+
+
+.gift-option-icon {
+    width: 45px;
+    height: 45px;
+
+    margin:
+        0 auto
+        12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #f4e2dc;
+
+    color:
+        #8f6b60;
+
+    font-size:
+        1.2rem;
+}
+
+
+.gift-option-title {
+    margin-bottom: 12px;
+
+    font-size:
+        1.1rem;
+
+    color:
+        #73584f;
+}
+
+
+.gift-option-description {
+    max-width: 320px;
+
+    margin:
+        0 auto
+        18px;
+
+    font-size:
+        .85rem;
+
+    line-height:
+        1.7;
+
+    color:
+        #927c75;
+}
+
+
+/* =====================================================
+   TRANSFERENCIA
+===================================================== */
+
+.bank-data {
+    margin-top: 20px;
+
+    border-top:
+        1px solid
+        #ead8d1;
+}
+
+
+.bank-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        13px
+        5px;
+
+    border-bottom:
+        1px solid
+        #ead8d1;
+
+    text-align: left;
+}
+
+
+.bank-row span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size:
+        .65rem;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #a58a82;
+}
+
+
+.bank-row strong {
+    font-size:
+        .86rem;
+
+    font-weight:
+        normal;
+
+    color:
+        #73584f;
+
+    word-break:
+        break-all;
+}
+
+
+.bank-copy-row > div {
+    flex: 1;
+}
+
+
+/* =====================================================
+   BOTÓN COPIAR
+===================================================== */
+
+.btn-copy {
+    flex-shrink: 0;
+
+    padding:
+        7px
+        12px;
+
+    border:
+        1px solid
+        #aa8276;
+
+    border-radius:
+        20px;
+
+    background:
+        transparent;
+
+    color:
+        #8d685e;
+
+    font-family: inherit;
+
+    font-size:
+        .62rem;
+
+    letter-spacing:
+        1px;
+
+    cursor: pointer;
+
+    transition:
+        .3s ease;
+}
+
+
+.btn-copy:hover {
+    background:
+        #aa8276;
+
+    color:
+        #fff;
+}
+
+
+.btn-copy.copied {
+    background:
+        #aa8276;
+
+    color:
+        #fff;
+}
+
+
+/* =====================================================
+   REGALO A CONSIDERACIÓN
+===================================================== */
+
+.gift-consideration {
+    margin-top: 18px;
+
+    padding:
+        13px
+        15px;
+
+    border-radius:
+        10px;
+
+    background:
+        #f8ece7;
+
+    color:
+        #98776d;
+
+    font-size:
+        .78rem;
+
+    font-style:
+        italic;
+
+    line-height:
+        1.5;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 576px) {
+
+    .gift-option {
+        padding:
+            22px
+            15px;
+    }
+
+
+    .bank-row {
+        gap: 10px;
+    }
+
+
+    .bank-row strong {
+        font-size:
+            .8rem;
+    }
+
+
+    .btn-copy {
+        padding:
+            7px
+            10px;
+
+        font-size:
+            .58rem;
+    }
+
+}
         
         /* =====================================================
         MENSAJE FINAL
@@ -1702,6 +1986,360 @@
             
         }
         
+    
+        /* =====================================================
+           PALETA WINNIE THE POOH
+           Miel / crema / rojo / café cálido
+        ===================================================== */
+
+        :root {
+            --pooh-honey: #E3A82B;
+            --pooh-honey-light: #F6C453;
+            --pooh-cream: #FFF8E7;
+            --pooh-cream-soft: #FCECCB;
+            --pooh-red: #B94A3A;
+            --pooh-red-dark: #8F352A;
+            --pooh-brown: #6F4B2E;
+            --pooh-brown-soft: #9A744B;
+            --pooh-gold-border: #D8A24A;
+            --pooh-shadow: rgba(111, 75, 46, .20);
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #FFFDF4 0%,
+                    var(--pooh-cream) 45%,
+                    var(--pooh-cream-soft) 100%
+                );
+        }
+
+        .envelope-screen {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #FFFDF4 0%,
+                    #FCECCB 100%
+                );
+        }
+
+        .envelope {
+            background: #D8A24A;
+            box-shadow: 0 25px 60px rgba(111, 75, 46, .24);
+        }
+
+        .envelope-left {
+            background: #E8B94F;
+        }
+
+        .envelope-right {
+            background: #D9A23A;
+        }
+
+        .envelope-bottom {
+            background: #F2C85A;
+        }
+
+        .flap {
+            background: #F6D77A;
+        }
+
+        .seal {
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #D86855,
+                    var(--pooh-red) 72%
+                );
+            color: #FFF8E7;
+            box-shadow: 0 5px 15px rgba(111, 75, 46, .22);
+        }
+
+        .open-label {
+            color: var(--pooh-brown);
+        }
+
+        .card-face {
+            background: var(--pooh-cream);
+            box-shadow: 0 8px 25px rgba(111, 75, 46, .15);
+        }
+
+        .card-back-face {
+            color: var(--pooh-brown);
+            background:
+                radial-gradient(
+                    circle at center,
+                    #FFFDF4,
+                    #FCECCB
+                );
+        }
+
+        .card-summary .small-text {
+            color: var(--pooh-red);
+        }
+
+        .card-summary h2 {
+            color: var(--pooh-honey);
+        }
+
+        .card-summary p {
+            color: var(--pooh-brown-soft);
+        }
+
+        .full-invitation {
+            color: var(--pooh-brown);
+        }
+
+        .invitation-small-title {
+            color: var(--pooh-red);
+        }
+
+        .full-invitation h1 {
+            color: var(--pooh-honey);
+            text-shadow:
+                0 2px 0 rgba(255,255,255,.65),
+                0 4px 12px rgba(111,75,46,.08);
+        }
+
+        .intro,
+        .location p,
+        .gift-registry .gift-text,
+        .gift-option-description {
+            color: var(--pooh-brown-soft);
+        }
+
+        .date {
+            border-top-color: var(--pooh-gold-border);
+            border-bottom-color: var(--pooh-gold-border);
+        }
+
+        .date-side {
+            color: var(--pooh-red);
+        }
+
+        .date-number {
+            color: var(--pooh-honey);
+            border-left-color: var(--pooh-gold-border);
+            border-right-color: var(--pooh-gold-border);
+        }
+
+        .event-time span {
+            color: var(--pooh-red);
+        }
+
+        .event-time strong,
+        .location h3,
+        .gift-registry h3,
+        .gift-option-title,
+        .gift-number,
+        .bank-row strong {
+            color: var(--pooh-brown);
+        }
+
+        .location-icon {
+            color: var(--pooh-red);
+        }
+
+        .btn-location,
+        .btn-gift,
+        .btn-copy {
+            border-color: var(--pooh-red);
+            color: var(--pooh-red);
+            background: #FFFDF4;
+        }
+
+        .btn-location:hover,
+        .btn-gift:hover,
+        .btn-copy:hover,
+        .btn-copy.copied {
+            background: var(--pooh-red);
+            color: #FFFDF4;
+        }
+
+        .gift-registry {
+            border-color: rgba(216, 162, 74, .55);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 253, 244, .98),
+                    rgba(252, 236, 203, .90)
+                );
+            box-shadow: 0 12px 30px rgba(111, 75, 46, .10);
+        }
+
+        .gift-registry::before {
+            color: rgba(227, 168, 43, .10);
+        }
+
+        .gift-icon,
+        .gift-option-icon {
+            background: #FCE7A5;
+            color: var(--pooh-red);
+        }
+
+        .gift-registry .gift-small-title,
+        .gift-store-name {
+            color: var(--pooh-red);
+        }
+
+        .gift-number-label,
+        .bank-row span {
+            color: var(--pooh-brown-soft);
+        }
+
+        .gift-store,
+        .bank-data,
+        .bank-row {
+            border-color: #E9C979;
+        }
+
+        .gift-option {
+            border-color: rgba(216, 162, 74, .40);
+            background: rgba(255, 251, 237, .86);
+        }
+
+        .gift-consideration {
+            background: #FFF0C7;
+            color: var(--pooh-brown);
+            border: 1px dashed rgba(216, 162, 74, .65);
+        }
+
+        .footer-message {
+            color: var(--pooh-red);
+        }
+
+        .corner-decoration::before,
+        .corner-decoration::after {
+            border-color: var(--pooh-honey);
+        }
+
+        .baby-card.settled {
+            box-shadow: 0 20px 60px rgba(111, 75, 46, .18);
+        }
+
+        @media(max-width: 576px) {
+            body.invitation-ready {
+                background:
+                    linear-gradient(
+                        180deg,
+                        #FFFDF4 0%,
+                        #FFF4D8 100%
+                    );
+            }
+        }
+
+        .baby-decoration {
+            margin-bottom: 20px;
+        }
+
+        .pooh-face {
+            width: 95px;
+            height: 95px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: #fff8e7;
+            padding: 8px;
+            border: 3px solid #E3A82B;
+            box-shadow: 0 8px 20px rgba(111, 75, 46, .15);
+        }
+        /* =====================================================
+   WINNIE POOH CENTRAL
+===================================================== */
+
+.pooh-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin: -40px 0px 10px;
+    position: relative;
+}
+
+
+.pooh-main img {
+    display: block;
+
+    width:
+        clamp(
+            135px,
+            30vw,
+            190px
+        );
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 12px
+            rgba(
+                111,
+                75,
+                46,
+                .12
+            )
+        );
+}
+
+
+/*
+ * Pequeño resplandor miel
+ * detrás del personaje.
+ */
+.pooh-main::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(246, 196, 83, .18) 0%,
+            rgba(246, 196, 83, .05) 60%,
+            transparent 75%
+        );
+
+    z-index: -1;
+}
+/* =====================================================
+   WINNIE POOH FINAL
+===================================================== */
+
+.pooh-footer {
+    position: relative;
+
+    width: 100%;
+
+    margin: -92px -64px -45px;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+
+.pooh-footer img {
+    display: block;
+
+    /* width:
+        clamp(
+            115px,
+            35vw,
+            165px
+        ); */
+
+        height: 185px;
+    object-fit: cover;
+    margin-left: 183px;
+}
     </style>
 </head>
 
@@ -1803,7 +2441,11 @@ class="full-invitation"
 <div
 class="baby-decoration"
 >
-🧸
+<img
+        src="assets/oso.png"
+        alt="Winnie Pooh"
+        class="pooh-face"
+    >
 </div>
 
 
@@ -1818,7 +2460,8 @@ Acompáñanos a celebrar
 
 <h1>
     Baby<br>
-    Shower
+    Shower <br>
+    Daniel
 </h1>
 
 
@@ -1873,16 +2516,24 @@ class="event-time"
 </div>
 
 
+
 <!-- Ubicación -->
 
 <div
 class="location"
 >
 
-<div
+<!-- <div
 class="location-icon"
 >
 ♡
+</div> -->
+<!-- Winnie Pooh central -->
+<div class="pooh-main">
+    <img
+        src="assets/oso2.png"
+        alt="Winnie Pooh"
+    >
 </div>
 
 <h3>
@@ -1909,78 +2560,161 @@ VER UBICACIÓN
 </div>
 
 <!-- =====================================================
-     MESA DE REGALOS
+     REGALOS
 ====================================================== -->
 
 <div class="gift-registry">
 
     <div class="gift-icon">
-        <i class='bx bx-gift' ></i>
+        <i class='bx bx-gift'></i>
     </div>
-
 
     <span class="gift-small-title">
         Si deseas hacernos un regalo
     </span>
 
-
     <h3>
-        Mesa de regalos
+        Opciones de regalo
     </h3>
-
 
     <p class="gift-text">
         Tu presencia es nuestro mejor regalo,
         pero si deseas tener un detalle con
-        nuestro bebé, hemos preparado una
-        mesa de regalos.
+        nuestro bebé, te compartimos algunas opciones.
     </p>
 
 
-    <div class="gift-store">
+    <!-- =============================================
+         LIVERPOOL
+    ============================================== -->
+
+    <div class="gift-option">
+
+        <div class="gift-option-icon">
+            <i class='bx bxs-baby-carriage' ></i>
+        </div>
+
+        <div class="gift-option-title">
+            Mesa de regalos
+        </div>
 
         <span class="gift-store-name">
             Liverpool
         </span>
 
-
         <span class="gift-number-label">
             Número de evento
         </span>
-
 
         <strong class="gift-number">
             60042460
         </strong>
 
-    </div>
-    <div class="gift-store">
-
-        <span class="gift-store-name">
-            BBVA
-        </span>
-
-
-        <span class="gift-number-label">
-            Número de tarjeta
-        </span>
-
-
-        <strong class="gift-number">
-            4152314582403112
-        </strong>
+        <a
+            href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60042460"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-gift"
+        >
+            VER MESA DE REGALOS
+        </a>
 
     </div>
 
 
-    <!-- <a
-        href="https://mesaderegalos.liverpool.com.mx/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-gift"
-    >
-        VER MESA DE REGALOS
-    </a> -->
+    <!-- =============================================
+         TRANSFERENCIA
+    ============================================== -->
+
+    <div class="gift-option">
+
+        <div class="gift-option-icon">
+            <i class='bx bx-credit-card' ></i>
+        </div>
+
+        <div class="gift-option-title">
+            Transferencia
+        </div>
+
+        <p class="gift-option-description">
+            Si prefieres mediante transferencia,
+            puedes hacerlo a los siguientes datos:
+        </p>
+
+
+        <div class="bank-data">
+
+            <div class="bank-row">
+                <span>Banco</span>
+
+                <strong>
+                    BBVA
+                </strong>
+            </div>
+
+
+            <div class="bank-row">
+                <span>Titular</span>
+
+                <strong>
+                    Ricardo Daniel Butrón
+                </strong>
+            </div>
+
+
+            <div class="bank-row bank-copy-row">
+
+                <div>
+                    <span>CLABE</span>
+
+                    <strong id="clabe">
+                        012 180 01565610491 0
+                    </strong>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-copy"
+                    data-copy="clabe"
+                >
+                    COPIAR
+                </button>
+
+            </div>
+
+
+           
+
+        </div>
+
+    </div>
+
+
+    <!-- =============================================
+         REGALO A CONSIDERACIÓN
+    ============================================== -->
+
+    <div class="gift-option">
+
+        <div class="gift-option-icon">
+           <i class='bx bx-child' ></i>
+        </div>
+
+        <div class="gift-option-title">
+            Regalo a consideración
+        </div>
+
+        <p class="gift-option-description">
+            Si prefieres elegir algo por tu cuenta,
+            cualquier detalle que elijas con cariño
+            para nuestro bebé será muy especial para nosotros.
+        </p>
+
+        <div class="gift-consideration">
+            ♡ Con mucho cariño recibiremos tu detalle ♡
+        </div>
+
+    </div>
 
 </div>
 
@@ -1990,7 +2724,14 @@ class="footer-message"
 ¡Nos encantará compartir
 este momento contigo!
 </div>
+<div class="pooh-footer">
 
+    <img
+        src="assets/oso3.png"
+        alt="Winnie Pooh"
+    >
+
+</div>
 </div>
 
 </div>
@@ -2072,6 +2813,120 @@ TOCA PARA ABRIR
     <source src="assets/youll-be-in-my-heart-piano-cover-phil-collins.mp3" type="audio/mpeg">
 </audio>
 <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+<script>
+
+    document
+        .querySelectorAll('.btn-copy')
+        .forEach(button => {
+
+            button.addEventListener(
+                'click',
+                async function () {
+
+                    const id =
+                        this.dataset.copy;
+
+                    const element =
+                        document.getElementById(id);
+
+                    if (!element) {
+                        return;
+                    }
+
+
+                    const text =
+                        element
+                            .textContent
+                            .trim();
+
+
+                    try {
+
+                        await navigator
+                            .clipboard
+                            .writeText(text);
+
+
+                        const originalText =
+                            this.textContent;
+
+
+                        this.textContent =
+                            'COPIADO ✓';
+
+
+                        this.classList.add(
+                            'copied'
+                        );
+
+
+                        setTimeout(() => {
+
+                            this.textContent =
+                                originalText;
+
+                            this.classList.remove(
+                                'copied'
+                            );
+
+                        }, 1800);
+
+
+                    } catch (error) {
+
+                        /*
+                         * Fallback para algunos
+                         * navegadores móviles.
+                         */
+
+                        const textarea =
+                            document
+                                .createElement(
+                                    'textarea'
+                                );
+
+
+                        textarea.value =
+                            text;
+
+
+                        document.body
+                            .appendChild(
+                                textarea
+                            );
+
+
+                        textarea.select();
+
+
+                        document
+                            .execCommand(
+                                'copy'
+                            );
+
+
+                        textarea.remove();
+
+
+                        this.textContent =
+                            'COPIADO ✓';
+
+
+                        setTimeout(() => {
+
+                            this.textContent =
+                                'COPIAR';
+
+                        }, 1800);
+
+                    }
+
+                }
+            );
+
+        });
+
+</script>
 <script>
     
     const envelopeWrapper =

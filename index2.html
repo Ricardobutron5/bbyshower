@@ -1,0 +1,3314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F6C453">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Baby Shower Butrón Garcia 👶🏻">
+    <meta property="og:description" content="Acompáñanos a celebrar.">
+    <meta property="og:url" content="https://baby-shower-butron-garcia.vercel.app/">
+    <meta name="format-detection" content="telephone=no">
+    <meta
+    property="og:image"
+    content="https://github.com/Ricardobutron5/bbyshower/blob/main/assets/image.png?raw=true"
+    >
+    
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Baby Shower">
+    <meta property="og:locale" content="es_MX">
+    <link rel="icon" type="image/png" href="https://github.com/Ricardobutron5/bbyshower/blob/main/assets/icon.png?raw=true">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Baby Shower Butrón Garcia</title>
+    
+    <style>
+        
+        /* =====================================================
+        RESET
+        ===================================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        html {
+            width: 100%;
+            min-height: 100%;
+            
+            scroll-behavior: smooth;
+        }
+        
+        
+        body {
+            width: 100%;
+            min-height: 100%;
+            
+            font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+            
+            background:
+            radial-gradient(
+            circle at center,
+            #fffaf7 0%,
+            #f8ede8 45%,
+            #ead8d1 100%
+            );
+            
+            overflow: hidden;
+            
+            overscroll-behavior-y: none;
+        }
+        
+        
+        /* =====================================================
+        BODY CUANDO TERMINA LA ANIMACIÓN
+        ===================================================== */
+        
+        body.invitation-ready {
+            overflow-x: hidden;
+            overflow-y: auto;
+            
+            overscroll-behavior-y: auto;
+            
+            -webkit-overflow-scrolling:
+            touch;
+            
+            padding-top:
+            max(
+            10px,
+            env(safe-area-inset-top)
+            );
+            
+            padding-bottom:
+            max(
+            10px,
+            env(safe-area-inset-bottom)
+            );
+        }
+        
+        
+        /* =====================================================
+        PANTALLA DEL SOBRE
+        ===================================================== */
+        
+        .envelope-screen {
+            position: fixed;
+            
+            inset: 0;
+            
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            
+            background:
+            radial-gradient(
+            circle at center,
+            #fffaf7 0%,
+            #f6e8e1 100%
+            );
+            
+            z-index: 1000;
+            
+            transition:
+            opacity .9s ease,
+            visibility .9s ease;
+        }
+        
+        
+        .envelope-screen.hide {
+            opacity: 0;
+            
+            visibility: hidden;
+            
+            pointer-events: none;
+        }
+        
+        
+        /* =====================================================
+        CONTENEDOR DEL SOBRE
+        ===================================================== */
+        
+        .envelope-wrapper {
+            position: relative;
+            
+            width:
+            min(
+            88vw,
+            430px
+            );
+            
+            perspective: 1400px;
+            
+            cursor: pointer;
+        }
+        
+        
+        .envelope {
+            position: relative;
+            
+            width: 100%;
+            
+            aspect-ratio:
+            1.55 / 1;
+            
+            background:
+            #d9b6ab;
+            
+            box-shadow:
+            0 25px 60px
+            rgba(
+            70,
+            40,
+            35,
+            .23
+            );
+        }
+        
+        
+        /* =====================================================
+        TARJETA
+        ===================================================== */
+        
+        .baby-card {
+            position: absolute;
+            
+            left: 7%;
+            bottom: 4%;
+            
+            width: 86%;
+            height: 92%;
+            
+            z-index: 2;
+            
+            transform:
+            translateY(0)
+            rotateX(0deg);
+            
+            transform-style: preserve-3d;
+            
+            transition:
+            transform
+            1.15s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            );
+            
+            cursor: default;
+        }
+        
+        
+        /* =====================================================
+        TARJETA FLOTANTE DURANTE ANIMACIÓN
+        ===================================================== */
+        
+        .baby-card.floating {
+            position: fixed;
+            
+            margin: 0;
+            
+            z-index: 3000;
+            
+            transition:
+            left
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            top
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            width
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            height
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            transform
+            1.3s
+            cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+            ),
+            
+            border-radius
+            1.3s ease,
+            
+            box-shadow
+            1.3s ease;
+        }
+        
+        /* =====================================================
+        CARAS DE LA TARJETA
+        ===================================================== */
+        
+        .card-face {
+            position: absolute;
+            
+            inset: 0;
+            
+            background:
+            #fffdfb;
+            
+            border-radius: 4px;
+            
+            overflow: hidden;
+            
+            backface-visibility:
+            hidden;
+            
+            -webkit-backface-visibility:
+            hidden;
+            
+            box-shadow:
+            0 8px 25px
+            rgba(
+            0,
+            0,
+            0,
+            .12
+            );
+        }
+        
+        
+        .card-front-face {
+            transform:
+            rotateY(0deg);
+        }
+        
+        
+        .card-back-face {
+            transform:
+            rotateX(180deg);
+            
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            
+            flex-direction: column;
+            
+            text-align: center;
+            
+            padding: 30px;
+            
+            color:
+            #8e6d63;
+            
+            background:
+            radial-gradient(
+            circle at center,
+            #fffdfb,
+            #f9eee9
+            );
+        }
+        
+        
+        .card-back-face
+        .back-icon {
+            font-size: 3rem;
+            
+            margin-bottom: 15px;
+        }
+        
+        
+        .card-back-face p {
+            font-size: .75rem;
+            
+            letter-spacing: 3px;
+            
+            text-transform:
+            uppercase;
+        }
+        
+        
+        /* =====================================================
+        CONTENIDO RESUMIDO
+        ===================================================== */
+        
+        .card-summary {
+            position: absolute;
+            
+            inset: 0;
+            
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            
+            flex-direction: column;
+            
+            text-align: center;
+            
+            padding: 30px;
+            
+            opacity: 1;
+            
+            transition:
+            opacity .5s ease,
+            transform .7s ease;
+        }
+        
+        
+        .card-summary
+        .small-text {
+            font-size: .7rem;
+            
+            letter-spacing: 4px;
+            
+            color:
+            #a98578;
+            
+            margin-bottom: 12px;
+        }
+        
+        
+        .card-summary h2 {
+            color:
+            #8b6559;
+            
+            font-size:
+            clamp(
+            1.7rem,
+            6vw,
+            2.8rem
+            );
+            
+            font-weight:
+            normal;
+            
+            line-height: 1;
+        }
+        
+        
+        .card-summary p {
+            margin-top: 12px;
+            
+            color:
+            #a98578;
+            
+            font-size: .8rem;
+        }
+        
+        
+        /* =====================================================
+        INVITACIÓN COMPLETA
+        ===================================================== */
+        
+        .full-invitation {
+            position: absolute;
+            
+            inset: 0;
+            
+            opacity: 0;
+            
+            pointer-events:
+            none;
+            
+            overflow: hidden;
+            
+            padding:
+            55px
+            50px
+            50px;
+            
+            text-align: center;
+            
+            color:
+            #73584f;
+            
+            transform:
+            scale(.96);
+            
+            transition:
+            opacity .8s ease,
+            transform .8s ease;
+        }
+        
+        
+        .baby-card.expanded
+        .card-summary {
+            display: none;
+            /* opacity: 0;
+            
+            transform:
+            scale(.94);
+            
+            pointer-events:
+            none; */
+        }
+        .baby-card.expanded
+        .card-back-face {
+            opacity: 0;
+            
+            transform:
+            scale(.94);
+            
+            pointer-events:
+            none;
+        }
+        
+        .baby-card.expanded
+        .full-invitation {
+            opacity: 1;
+            
+            transform:
+            scale(1);
+            
+            pointer-events:
+            auto;
+        }
+        
+        
+        /* =====================================================
+        ESTADO FINAL
+        YA NO USA FIXED
+        ===================================================== */
+        
+        .baby-card.settled {
+            position: relative !important;
+            
+            left: auto !important;
+            right: auto !important;
+            
+            top: auto !important;
+            bottom: auto !important;
+            
+            width:
+            min(
+            calc(
+            100vw - 20px
+            ),
+            560px
+            ) !important;
+            
+            height:
+            auto !important;
+            
+            min-height:
+            calc(
+            100dvh - 20px
+            );
+            
+            margin:
+            0 auto;
+            
+            transform:
+            none !important;
+            
+            transition:
+            none !important;
+            
+            perspective:
+            none;
+            
+            overflow:
+            visible;
+            
+            border-radius:
+            8px;
+            
+            box-shadow:
+            0 20px 60px
+            rgba(
+            65,
+            35,
+            30,
+            .18
+            );
+        }
+        
+        
+        .baby-card.settled
+        .card-front-face {
+            position: relative;
+            
+            inset: auto;
+            
+            width: 100%;
+            
+            height: auto;
+            
+            min-height:
+            calc(
+            100dvh - 20px
+            );
+            
+            overflow:
+            visible;
+            
+            transform:
+            none;
+        }
+        
+        
+        .baby-card.settled
+        .card-back-face {
+            display: none;
+        }
+        
+        
+        .baby-card.settled
+        .card-summary {
+            display: none;
+        }
+        
+        
+        .baby-card.settled
+        .full-invitation {
+            position: relative;
+            
+            inset: auto;
+            
+            width: 100%;
+            
+            min-height:
+            calc(
+            100dvh - 20px
+            );
+            
+            overflow:
+            visible;
+            
+            opacity: 1;
+            
+            transform:
+            none;
+            
+            pointer-events:
+            auto;
+        }
+        
+        
+        /* =====================================================
+        DECORACIÓN
+        ===================================================== */
+        
+        .baby-decoration {
+            font-size:
+            2.6rem;
+            
+            margin-bottom:
+            20px;
+        }
+        
+        
+        .invitation-small-title {
+            text-transform:
+            uppercase;
+            
+            font-size:
+            .72rem;
+            
+            letter-spacing:
+            5px;
+            
+            color:
+            #a98275;
+            
+            margin-bottom:
+            22px;
+        }
+        
+        
+        .full-invitation h1 {
+            font-size:
+            clamp(
+            3rem,
+            8vw,
+            5.2rem
+            );
+            
+            font-weight:
+            normal;
+            
+            line-height:
+            .95;
+            
+            color:
+            #8f6b60;
+            
+            margin-bottom:
+            30px;
+        }
+        
+        
+        .intro {
+            max-width:
+            380px;
+            
+            margin:
+            0 auto
+            35px;
+            
+            font-size:
+            .98rem;
+            
+            line-height:
+            1.8;
+            
+            color:
+            #846c64;
+        }
+        
+        
+        /* =====================================================
+        FECHA
+        ===================================================== */
+        
+        .date {
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            
+            max-width:
+            390px;
+            
+            margin:
+            0 auto
+            35px;
+            
+            padding:
+            22px
+            5px;
+            
+            border-top:
+            1px solid
+            #d8c1b9;
+            
+            border-bottom:
+            1px solid
+            #d8c1b9;
+        }
+        
+        
+        .date-side {
+            width: 32%;
+            
+            font-size:
+            .72rem;
+            
+            letter-spacing:
+            2px;
+            
+            text-transform:
+            uppercase;
+            
+            color:
+            #927a72;
+        }
+        
+        
+        .date-number {
+            width: 36%;
+            
+            font-size:
+            3.4rem;
+            
+            line-height: 1;
+            
+            color:
+            #8f6b60;
+            
+            border-left:
+            1px solid
+            #d8c1b9;
+            
+            border-right:
+            1px solid
+            #d8c1b9;
+        }
+        
+        
+        /* =====================================================
+        HORA
+        ===================================================== */
+        
+        .event-time {
+            margin-bottom:
+            35px;
+        }
+        
+        
+        .event-time span {
+            display: block;
+            
+            font-size:
+            .72rem;
+            
+            letter-spacing:
+            3px;
+            
+            text-transform:
+            uppercase;
+            
+            color:
+            #a98275;
+            
+            margin-bottom:
+            7px;
+        }
+        
+        
+        .event-time strong {
+            font-size:
+            1.35rem;
+            
+            font-weight:
+            normal;
+            
+            color:
+            #73584f;
+        }
+        
+        
+        /* =====================================================
+        UBICACIÓN
+        ===================================================== */
+        
+        .location {
+            margin-top:
+            25px;
+        }
+        
+        
+        .location-icon {
+            font-size:
+            1.7rem;
+            
+            margin-bottom:
+            12px;
+        }
+        
+        
+        .location h3 {
+            font-size:
+            1.15rem;
+            
+            font-weight:
+            normal;
+            
+            color:
+            #73584f;
+            
+            margin-bottom:
+            9px;
+        }
+        
+        
+        .location p {
+            font-size:
+            .88rem;
+            
+            line-height:
+            1.7;
+            
+            color:
+            #927c75;
+        }
+        
+        
+        .btn-location {
+            display:
+            inline-block;
+            
+            margin-top:
+            23px;
+            
+            padding:
+            12px
+            30px;
+            
+            border:
+            1px solid
+            #aa8276;
+            
+            color:
+            #8d685e;
+            
+            text-decoration:
+            none;
+            
+            border-radius:
+            30px;
+            
+            font-size:
+            .8rem;
+            
+            letter-spacing:
+            1px;
+            
+            transition:
+            background .3s ease,
+            color .3s ease,
+            transform .3s ease;
+        }
+        
+        
+        .btn-location:hover {
+            background:
+            #aa8276;
+            
+            color:
+            #fff;
+            
+            transform:
+            translateY(-2px);
+        }
+        
+        /* =====================================================
+   MESA DE REGALOS
+===================================================== */
+
+.gift-registry {
+    position: relative;
+
+    max-width: 390px;
+
+    margin:
+        45px auto
+        10px;
+
+    padding:
+        30px
+        25px;
+
+    border:
+        1px solid
+        rgba(
+            170,
+            130,
+            118,
+            .35
+        );
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 250, 247, .95),
+            rgba(248, 237, 232, .85)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            100,
+            65,
+            55,
+            .08
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decoración tenue */
+
+.gift-registry::before {
+    content: "♡";
+
+    position: absolute;
+
+    right: 15px;
+    top: 5px;
+
+    font-size: 4.5rem;
+
+    color:
+        rgba(
+            170,
+            130,
+            118,
+            .07
+        );
+
+    pointer-events: none;
+}
+
+
+.gift-icon {
+    width: 58px;
+    height: 58px;
+
+    margin:
+        0 auto
+        18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #f4e2dc;
+
+    color:
+        #8f6b60;
+
+    font-size: 1.7rem;
+}
+
+
+.gift-registry .gift-small-title {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: .68rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color:
+        #a98275;
+}
+
+
+.gift-registry h3 {
+    margin-bottom: 13px;
+
+    font-size: 1.35rem;
+
+    font-weight: normal;
+
+    color:
+        #73584f;
+}
+
+
+.gift-registry .gift-text {
+    max-width: 320px;
+
+    margin:
+        0 auto
+        20px;
+
+    font-size: .88rem;
+
+    line-height: 1.7;
+
+    color:
+        #927c75;
+}
+
+
+.gift-store {
+    margin:
+        20px auto;
+
+    padding:
+        18px
+        15px;
+
+    border-top:
+        1px solid
+        #ead8d1;
+
+    border-bottom:
+        1px solid
+        #ead8d1;
+}
+
+
+.gift-store-name {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: .75rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color:
+        #a98275;
+}
+
+
+.gift-number-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: .7rem;
+
+    color:
+        #a58a82;
+}
+
+
+.gift-number {
+    display: block;
+
+    font-size: 1.45rem;
+
+    letter-spacing: 2px;
+
+    color:
+        #73584f;
+}
+
+
+.btn-gift {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding:
+        12px
+        30px;
+
+    border:
+        1px solid
+        #aa8276;
+
+    border-radius:
+        30px;
+
+    color:
+        #8d685e;
+
+    background:
+        transparent;
+
+    text-decoration:
+        none;
+
+    font-size: .78rem;
+
+    letter-spacing: 1px;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.btn-gift:hover {
+    background:
+        #aa8276;
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 576px) {
+
+    .gift-registry {
+        margin-top: 35px;
+
+        padding:
+            25px
+            18px;
+    }
+
+
+    .gift-number {
+        font-size:
+            1.25rem;
+    }
+
+}
+
+/* =====================================================
+   OPCIONES DE REGALO
+===================================================== */
+
+.gift-option {
+    position: relative;
+
+    margin-top: 20px;
+
+    padding:
+        25px
+        20px;
+
+    border:
+        1px solid
+        rgba(
+            170,
+            130,
+            118,
+            .25
+        );
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            255,
+            253,
+            251,
+            .75
+        );
+}
+
+
+.gift-option-icon {
+    width: 45px;
+    height: 45px;
+
+    margin:
+        0 auto
+        12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #f4e2dc;
+
+    color:
+        #8f6b60;
+
+    font-size:
+        1.2rem;
+}
+
+
+.gift-option-title {
+    margin-bottom: 12px;
+
+    font-size:
+        1.1rem;
+
+    color:
+        #73584f;
+}
+
+
+.gift-option-description {
+    max-width: 320px;
+
+    margin:
+        0 auto
+        18px;
+
+    font-size:
+        .85rem;
+
+    line-height:
+        1.7;
+
+    color:
+        #927c75;
+}
+
+
+/* =====================================================
+   TRANSFERENCIA
+===================================================== */
+
+.bank-data {
+    margin-top: 20px;
+
+    border-top:
+        1px solid
+        #ead8d1;
+}
+
+
+.bank-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        13px
+        5px;
+
+    border-bottom:
+        1px solid
+        #ead8d1;
+
+    text-align: left;
+}
+
+
+.bank-row span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size:
+        .65rem;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #a58a82;
+}
+
+
+.bank-row strong {
+    font-size:
+        .86rem;
+
+    font-weight:
+        normal;
+
+    color:
+        #73584f;
+
+    word-break:
+        break-all;
+}
+
+
+.bank-copy-row > div {
+    flex: 1;
+}
+
+
+/* =====================================================
+   BOTÓN COPIAR
+===================================================== */
+
+.btn-copy {
+    flex-shrink: 0;
+
+    padding:
+        7px
+        12px;
+
+    border:
+        1px solid
+        #aa8276;
+
+    border-radius:
+        20px;
+
+    background:
+        transparent;
+
+    color:
+        #8d685e;
+
+    font-family: inherit;
+
+    font-size:
+        .62rem;
+
+    letter-spacing:
+        1px;
+
+    cursor: pointer;
+
+    transition:
+        .3s ease;
+}
+
+
+.btn-copy:hover {
+    background:
+        #aa8276;
+
+    color:
+        #fff;
+}
+
+
+.btn-copy.copied {
+    background:
+        #aa8276;
+
+    color:
+        #fff;
+}
+
+
+/* =====================================================
+   REGALO A CONSIDERACIÓN
+===================================================== */
+
+.gift-consideration {
+    margin-top: 18px;
+
+    padding:
+        13px
+        15px;
+
+    border-radius:
+        10px;
+
+    background:
+        #f8ece7;
+
+    color:
+        #98776d;
+
+    font-size:
+        .78rem;
+
+    font-style:
+        italic;
+
+    line-height:
+        1.5;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 576px) {
+
+    .gift-option {
+        padding:
+            22px
+            15px;
+    }
+
+
+    .bank-row {
+        gap: 10px;
+    }
+
+
+    .bank-row strong {
+        font-size:
+            .8rem;
+    }
+
+
+    .btn-copy {
+        padding:
+            7px
+            10px;
+
+        font-size:
+            .58rem;
+    }
+
+}
+        
+        /* =====================================================
+        MENSAJE FINAL
+        ===================================================== */
+        
+        .footer-message {
+            margin-top:
+            40px;
+            
+            margin-bottom:
+            20px;
+            
+            font-style:
+            italic;
+            
+            font-size:
+            .9rem;
+            
+            color:
+            #a18177;
+        }
+        
+        
+        /* =====================================================
+        SOBRE
+        ===================================================== */
+        
+        .envelope-left {
+            position: absolute;
+            
+            inset: 0;
+            
+            background:
+            #dfbeb4;
+            
+            clip-path:
+            polygon(
+            0 0,
+            52% 58%,
+            0 100%
+            );
+            
+            z-index: 3;
+        }
+        
+        
+        .envelope-right {
+            position: absolute;
+            
+            inset: 0;
+            
+            background:
+            #d4ada2;
+            
+            clip-path:
+            polygon(
+            100% 0,
+            48% 58%,
+            100% 100%
+            );
+            
+            z-index: 3;
+        }
+        
+        
+        .envelope-bottom {
+            position: absolute;
+            
+            inset: 0;
+            
+            background:
+            #e8c9c0;
+            
+            clip-path:
+            polygon(
+            0 100%,
+            50% 43%,
+            100% 100%
+            );
+            
+            z-index: 4;
+        }
+        
+        
+        /* =====================================================
+        SOLAPA
+        ===================================================== */
+        
+        .flap {
+            position: absolute;
+            
+            left: 0;
+            top: 0;
+            
+            width: 100%;
+            height: 59%;
+            
+            background:
+            #e5c5bc;
+            
+            clip-path:
+            polygon(
+            0 0,
+            100% 0,
+            50% 100%
+            );
+            
+            transform-origin:
+            top center;
+            
+            transform:
+            rotateX(0deg);
+            
+            transform-style:
+            preserve-3d;
+            
+            backface-visibility:
+            hidden;
+            
+            z-index: 6;
+            
+            transition:
+            transform
+            .9s
+            cubic-bezier(
+            .4,
+            0,
+            .2,
+            1
+            ),
+            
+            z-index
+            0s
+            linear
+            .45s;
+        }
+        
+        
+        /* =====================================================
+        SELLO
+        ===================================================== */
+        
+        .seal {
+            position: absolute;
+            
+            left: 50%;
+            top: 50%;
+            
+            transform:
+            translate(
+            -50%,
+            -50%
+            );
+            
+            width: 65px;
+            height: 65px;
+            
+            border-radius:
+            50%;
+            
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            
+            background:
+            radial-gradient(
+            circle at 35% 30%,
+            #dba797,
+            #aa6f61 72%
+            );
+            
+            color: #fff;
+            
+            font-size:
+            1.5rem;
+            
+            z-index: 8;
+            
+            box-shadow:
+            0 5px 15px
+            rgba(
+            0,
+            0,
+            0,
+            .18
+            );
+            
+            transition:
+            opacity .3s ease,
+            transform .4s ease;
+        }
+        
+        
+        /* =====================================================
+        TEXTO TOCA PARA ABRIR
+        ===================================================== */
+        
+        .open-label {
+            position: absolute;
+            
+            left: 0;
+            bottom: -65px;
+            
+            width: 100%;
+            
+            text-align:
+            center;
+            
+            font-size:
+            .78rem;
+            
+            letter-spacing:
+            3px;
+            
+            color:
+            #896d65;
+            
+            animation:
+            pulse
+            2s
+            infinite;
+            
+            transition:
+            opacity .4s ease;
+        }
+        
+        
+        @keyframes pulse {
+            
+            0%,
+            100% {
+                opacity: .4;
+            }
+            
+            50% {
+                opacity: 1;
+            }
+            
+        }
+        
+        
+        /* =====================================================
+        PASO 1
+        ABRIR SOBRE
+        ===================================================== */
+        
+        .envelope-wrapper.open
+        .flap {
+            transform:
+            rotateX(
+            180deg
+            );
+            
+            z-index: 0;
+        }
+        
+        
+        .envelope-wrapper.open
+        .seal {
+            opacity: 0;
+            
+            transform:
+            translate(
+            -50%,
+            -50%
+            )
+            scale(.4);
+        }
+        
+        
+        .envelope-wrapper.open
+        .open-label {
+            opacity: 0;
+        }
+        
+        
+        /* =====================================================
+        PASO 2
+        SACAR TARJETA
+        ===================================================== */
+        
+        .envelope-wrapper.card-out
+        .baby-card {
+            transform:
+            translateY(
+            -82%
+            )
+            rotateX(
+            0deg
+            );
+            
+            z-index: 10;
+        }
+        
+        
+        /* =====================================================
+        PASO 3
+        GIRAR TARJETA
+        ===================================================== */
+        
+        .envelope-wrapper.card-rotate
+        .baby-card {
+            transform:
+            translateY(
+            -82%
+            )
+            rotateX(
+            540deg
+            );
+            
+            z-index: 10;
+        }
+        
+        
+        /* =====================================================
+        DECORACIONES DE ESQUINA
+        ===================================================== */
+        
+        .corner-decoration {
+            position: absolute;
+            
+            width:
+            130px;
+            
+            height:
+            130px;
+            
+            opacity:
+            .16;
+            
+            pointer-events:
+            none;
+        }
+        
+        
+        .corner-decoration::before,
+        .corner-decoration::after {
+            content: "";
+            
+            position:
+            absolute;
+            
+            border-radius:
+            50%;
+            
+            border:
+            1px solid
+            #9b766b;
+        }
+        
+        
+        .corner-decoration::before {
+            width:
+            85px;
+            
+            height:
+            35px;
+            
+            transform:
+            rotate(
+            45deg
+            );
+        }
+        
+        
+        .corner-decoration::after {
+            width:
+            50px;
+            
+            height:
+            22px;
+            
+            top:
+            25px;
+            
+            left:
+            35px;
+            
+            transform:
+            rotate(
+            -25deg
+            );
+        }
+        
+        
+        .corner-top {
+            top:
+            15px;
+            
+            left:
+            10px;
+        }
+        
+        
+        .corner-bottom {
+            right:
+            10px;
+            
+            bottom:
+            5px;
+            
+            transform:
+            rotate(
+            180deg
+            );
+        }
+        
+        
+        /* =====================================================
+        MOBILE
+        ===================================================== */
+        
+        @media(
+        max-width: 576px
+        ) {
+            
+            .envelope-wrapper {
+                width:
+                86vw;
+            }
+            
+            
+            .seal {
+                width:
+                56px;
+                
+                height:
+                56px;
+                
+                font-size:
+                1.25rem;
+            }
+            
+            
+            .full-invitation {
+                padding:
+                42px
+                24px
+                45px;
+            }
+            
+            
+            .baby-card.settled {
+                width:
+                calc(
+                100vw - 20px
+                )
+                !important;
+                
+                min-height:
+                calc(
+                100dvh - 20px
+                );
+            }
+            
+            
+            .baby-card.settled
+            .card-front-face {
+                min-height:
+                calc(
+                100dvh - 20px
+                );
+            }
+            
+            
+            .baby-card.settled
+            .full-invitation {
+                min-height:
+                calc(
+                100dvh - 20px
+                );
+            }
+            
+            
+            .full-invitation h1 {
+                font-size:
+                3.2rem;
+            }
+            
+            
+            .intro {
+                font-size:
+                .9rem;
+            }
+            
+            
+            .date {
+                margin-bottom:
+                28px;
+            }
+            
+            
+            .date-number {
+                font-size:
+                2.8rem;
+            }
+            
+            
+            .date-side {
+                font-size:
+                .64rem;
+            }
+            
+        }
+        
+        
+        /* =====================================================
+        PANTALLAS BAJAS
+        ===================================================== */
+        
+        @media(
+        max-height: 650px
+        ) {
+            
+            .full-invitation {
+                padding-top:
+                30px;
+            }
+            
+            
+            .baby-decoration {
+                margin-bottom:
+                10px;
+            }
+            
+            
+            .invitation-small-title {
+                margin-bottom:
+                15px;
+            }
+            
+            
+            .full-invitation h1 {
+                margin-bottom:
+                20px;
+            }
+            
+        }
+        
+    
+        /* =====================================================
+           PALETA WINNIE THE POOH
+           Miel / crema / rojo / café cálido
+        ===================================================== */
+
+        :root {
+            --pooh-honey: #E3A82B;
+            --pooh-honey-light: #F6C453;
+            --pooh-cream: #FFF8E7;
+            --pooh-cream-soft: #FCECCB;
+            --pooh-red: #B94A3A;
+            --pooh-red-dark: #8F352A;
+            --pooh-brown: #6F4B2E;
+            --pooh-brown-soft: #9A744B;
+            --pooh-gold-border: #D8A24A;
+            --pooh-shadow: rgba(111, 75, 46, .20);
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #FFFDF4 0%,
+                    var(--pooh-cream) 45%,
+                    var(--pooh-cream-soft) 100%
+                );
+        }
+
+        .envelope-screen {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #FFFDF4 0%,
+                    #FCECCB 100%
+                );
+        }
+
+        .envelope {
+            background: #D8A24A;
+            box-shadow: 0 25px 60px rgba(111, 75, 46, .24);
+        }
+
+        .envelope-left {
+            background: #E8B94F;
+        }
+
+        .envelope-right {
+            background: #D9A23A;
+        }
+
+        .envelope-bottom {
+            background: #F2C85A;
+        }
+
+        .flap {
+            background: #F6D77A;
+        }
+
+        .seal {
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #D86855,
+                    var(--pooh-red) 72%
+                );
+            color: #FFF8E7;
+            box-shadow: 0 5px 15px rgba(111, 75, 46, .22);
+        }
+
+        .open-label {
+            color: var(--pooh-brown);
+        }
+
+        .card-face {
+            background: var(--pooh-cream);
+            box-shadow: 0 8px 25px rgba(111, 75, 46, .15);
+        }
+
+        .card-back-face {
+            color: var(--pooh-brown);
+            background:
+                radial-gradient(
+                    circle at center,
+                    #FFFDF4,
+                    #FCECCB
+                );
+        }
+
+        .card-summary .small-text {
+            color: var(--pooh-red);
+        }
+
+        .card-summary h2 {
+            color: var(--pooh-honey);
+        }
+
+        .card-summary p {
+            color: var(--pooh-brown-soft);
+        }
+
+        .full-invitation {
+            color: var(--pooh-brown);
+        }
+
+        .invitation-small-title {
+            color: var(--pooh-red);
+        }
+
+        .full-invitation h1 {
+            color: var(--pooh-honey);
+            text-shadow:
+                0 2px 0 rgba(255,255,255,.65),
+                0 4px 12px rgba(111,75,46,.08);
+        }
+
+        .intro,
+        .location p,
+        .gift-registry .gift-text,
+        .gift-option-description {
+            color: var(--pooh-brown-soft);
+        }
+
+        .date {
+            border-top-color: var(--pooh-gold-border);
+            border-bottom-color: var(--pooh-gold-border);
+        }
+
+        .date-side {
+            color: var(--pooh-red);
+        }
+
+        .date-number {
+            color: var(--pooh-honey);
+            border-left-color: var(--pooh-gold-border);
+            border-right-color: var(--pooh-gold-border);
+        }
+
+        .event-time span {
+            color: var(--pooh-red);
+        }
+
+        .event-time strong,
+        .location h3,
+        .gift-registry h3,
+        .gift-option-title,
+        .gift-number,
+        .bank-row strong {
+            color: var(--pooh-brown);
+        }
+
+        .location-icon {
+            color: var(--pooh-red);
+        }
+
+        .btn-location,
+        .btn-gift,
+        .btn-copy {
+            border-color: var(--pooh-red);
+            color: var(--pooh-red);
+            background: #FFFDF4;
+        }
+
+        .btn-location:hover,
+        .btn-gift:hover,
+        .btn-copy:hover,
+        .btn-copy.copied {
+            background: var(--pooh-red);
+            color: #FFFDF4;
+        }
+
+        .gift-registry {
+            border-color: rgba(216, 162, 74, .55);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 253, 244, .98),
+                    rgba(252, 236, 203, .90)
+                );
+            box-shadow: 0 12px 30px rgba(111, 75, 46, .10);
+        }
+
+        .gift-registry::before {
+            color: rgba(227, 168, 43, .10);
+        }
+
+        .gift-icon,
+        .gift-option-icon {
+            background: #FCE7A5;
+            color: var(--pooh-red);
+        }
+
+        .gift-registry .gift-small-title,
+        .gift-store-name {
+            color: var(--pooh-red);
+        }
+
+        .gift-number-label,
+        .bank-row span {
+            color: var(--pooh-brown-soft);
+        }
+
+        .gift-store,
+        .bank-data,
+        .bank-row {
+            border-color: #E9C979;
+        }
+
+        .gift-option {
+            border-color: rgba(216, 162, 74, .40);
+            background: rgba(255, 251, 237, .86);
+        }
+
+        .gift-consideration {
+            background: #FFF0C7;
+            color: var(--pooh-brown);
+            border: 1px dashed rgba(216, 162, 74, .65);
+        }
+
+        .footer-message {
+            color: var(--pooh-red);
+        }
+
+        .corner-decoration::before,
+        .corner-decoration::after {
+            border-color: var(--pooh-honey);
+        }
+
+        .baby-card.settled {
+            box-shadow: 0 20px 60px rgba(111, 75, 46, .18);
+        }
+
+        @media(max-width: 576px) {
+            body.invitation-ready {
+                background:
+                    linear-gradient(
+                        180deg,
+                        #FFFDF4 0%,
+                        #FFF4D8 100%
+                    );
+            }
+        }
+
+        .baby-decoration {
+            margin-bottom: 20px;
+        }
+
+        .pooh-face {
+            width: 95px;
+            height: 95px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: #fff8e7;
+            padding: 8px;
+            border: 3px solid #E3A82B;
+            box-shadow: 0 8px 20px rgba(111, 75, 46, .15);
+        }
+        /* =====================================================
+   WINNIE POOH CENTRAL
+===================================================== */
+
+.pooh-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin: -40px 0px 10px;
+    position: relative;
+}
+
+
+.pooh-main img {
+    display: block;
+
+    width:
+        clamp(
+            135px,
+            30vw,
+            190px
+        );
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 12px
+            rgba(
+                111,
+                75,
+                46,
+                .12
+            )
+        );
+}
+
+
+/*
+ * Pequeño resplandor miel
+ * detrás del personaje.
+ */
+.pooh-main::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(246, 196, 83, .18) 0%,
+            rgba(246, 196, 83, .05) 60%,
+            transparent 75%
+        );
+
+    z-index: -1;
+}
+/* =====================================================
+   WINNIE POOH FINAL
+===================================================== */
+
+.pooh-footer {
+    position: relative;
+
+    width: 100%;
+
+    margin: -92px -64px -45px;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+
+.pooh-footer img {
+    display: block;
+
+    /* width:
+        clamp(
+            115px,
+            35vw,
+            165px
+        ); */
+
+        height: 185px;
+    object-fit: cover;
+    margin-left: 183px;
+}
+    </style>
+</head>
+
+
+<body>
+    
+    
+    <!-- =====================================================
+    SOBRE
+    ====================================================== -->
+    
+    <section
+    class="envelope-screen"
+    id="envelopeScreen"
+    >
+    
+    <div
+    class="envelope-wrapper"
+    id="envelopeWrapper"
+    >
+    
+    <div class="envelope">
+        
+        
+        <!-- =================================================
+        TARJETA
+        ================================================== -->
+        
+        <div
+        class="baby-card"
+        id="babyCard"
+        >
+        
+        
+        <!-- =============================================
+        FRENTE
+        ============================================== -->
+        
+        <div
+        class="
+        card-face
+        card-front-face
+        "
+        >
+        
+        
+        <!-- Decoración -->
+        
+        <div
+        class="
+        corner-decoration
+        corner-top
+        "
+        ></div>
+        
+        <div
+        class="
+        corner-decoration
+        corner-bottom
+        "
+        ></div>
+        
+        
+        <!-- =========================================
+        CONTENIDO PEQUEÑO
+        ========================================== -->
+        
+        <div
+        class="card-summary"
+        >
+        
+        <span
+        class="small-text"
+        >
+        ESTÁS INVITADO A
+    </span>
+    
+    <h2>
+        Baby<br>
+        Shower
+    </h2>
+    
+    <p>
+        Hay una pequeña sorpresa
+        en camino
+    </p>
+    
+</div>
+
+
+<!-- =========================================
+INVITACIÓN COMPLETA
+========================================== -->
+
+<div
+class="full-invitation"
+>
+
+<div
+class="baby-decoration"
+>
+<img
+        src="assets/oso.png"
+        alt="Winnie Pooh"
+        class="pooh-face"
+    >
+</div>
+
+
+<div
+class="
+invitation-small-title
+"
+>
+Acompáñanos a celebrar
+</div>
+
+
+<h1>
+    Baby<br>
+    Shower <br>
+    Daniel
+</h1>
+
+
+<p class="intro">
+    Un pequeño amor está en camino
+    y queremos compartir contigo
+    la alegría de celebrar
+    su próxima llegada.
+</p>
+
+
+<!-- Fecha -->
+
+<div class="date">
+    
+    <div
+    class="date-side"
+    >
+    Sábado
+</div>
+
+<div
+class="date-number"
+>
+05
+</div>
+
+<div
+class="date-side"
+>
+Diciembre<br>
+2026
+</div>
+
+</div>
+
+
+<!-- Hora -->
+
+<div
+class="event-time"
+>
+
+<span>
+    Te esperamos a las
+</span>
+
+<strong>
+    4:00 PM
+</strong>
+
+</div>
+
+
+
+<!-- Ubicación -->
+
+<div
+class="location"
+>
+
+<!-- <div
+class="location-icon"
+>
+♡
+</div> -->
+<!-- Winnie Pooh central -->
+<div class="pooh-main">
+    <img
+        src="assets/oso2.png"
+        alt="Winnie Pooh"
+    >
+</div>
+
+<h3>
+    Salón Don Julian
+</h3>
+
+<p>
+    Calle Licenciado Zeferino Fajardo Luna 426
+    Colinas del Valle
+    87018 Ciudad Victoria
+    Tamaulipas
+</p>
+
+
+<a
+href="https://maps.apple/p/aumf4vSLKhf~JP"
+target="_blank"
+rel="noopener noreferrer"
+class="btn-location"
+>
+VER UBICACIÓN
+</a>
+
+</div>
+
+<!-- =====================================================
+     REGALOS
+====================================================== -->
+
+<div class="gift-registry">
+
+    <div class="gift-icon">
+        <i class='bx bx-gift'></i>
+    </div>
+
+    <span class="gift-small-title">
+        Si deseas hacernos un regalo
+    </span>
+
+    <h3>
+        Opciones de regalo
+    </h3>
+
+    <p class="gift-text">
+        Tu presencia es nuestro mejor regalo,
+        pero si deseas tener un detalle con
+        nuestro bebé, te compartimos algunas opciones.
+    </p>
+
+
+    <!-- =============================================
+         LIVERPOOL
+    ============================================== -->
+
+    <div class="gift-option">
+
+        <div class="gift-option-icon">
+            <i class='bx bxs-baby-carriage' ></i>
+        </div>
+
+        <div class="gift-option-title">
+            Mesa de regalos
+        </div>
+
+        <span class="gift-store-name">
+            Liverpool
+        </span>
+
+        <span class="gift-number-label">
+            Número de evento
+        </span>
+
+        <strong class="gift-number">
+            60042460
+        </strong>
+
+        <a
+            href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60042460"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-gift"
+        >
+            VER MESA DE REGALOS
+        </a>
+
+    </div>
+
+
+    <!-- =============================================
+         TRANSFERENCIA
+    ============================================== -->
+
+    <div class="gift-option">
+
+        <div class="gift-option-icon">
+            <i class='bx bx-credit-card' ></i>
+        </div>
+
+        <div class="gift-option-title">
+            Transferencia
+        </div>
+
+        <p class="gift-option-description">
+            Si prefieres mediante transferencia,
+            puedes hacerlo a los siguientes datos:
+        </p>
+
+
+        <div class="bank-data">
+
+            <div class="bank-row">
+                <span>Banco</span>
+
+                <strong>
+                    BBVA
+                </strong>
+            </div>
+
+
+            <div class="bank-row">
+                <span>Titular</span>
+
+                <strong>
+                    Ricardo Daniel Butrón
+                </strong>
+            </div>
+
+
+            <div class="bank-row bank-copy-row">
+
+                <div>
+                    <span>CLABE</span>
+
+                    <strong id="clabe">
+                        012 180 01565610491 0
+                    </strong>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-copy"
+                    data-copy="clabe"
+                >
+                    COPIAR
+                </button>
+
+            </div>
+
+
+           
+
+        </div>
+
+    </div>
+
+
+    <!-- =============================================
+         REGALO A CONSIDERACIÓN
+    ============================================== -->
+
+    <div class="gift-option">
+
+        <div class="gift-option-icon">
+           <i class='bx bx-child' ></i>
+        </div>
+
+        <div class="gift-option-title">
+            Regalo a consideración
+        </div>
+
+        <p class="gift-option-description">
+            Si prefieres elegir algo por tu cuenta,
+            cualquier detalle que elijas con cariño
+            para nuestro bebé será muy especial para nosotros.
+        </p>
+
+        <div class="gift-consideration">
+            ♡ Con mucho cariño recibiremos tu detalle ♡
+        </div>
+
+    </div>
+
+</div>
+
+<div
+class="footer-message"
+>
+¡Nos encantará compartir
+este momento contigo!
+</div>
+<div class="pooh-footer">
+
+    <img
+        src="assets/oso3.png"
+        alt="Winnie Pooh"
+    >
+
+</div>
+</div>
+
+</div>
+
+
+<!-- =============================================
+REVERSO
+============================================== -->
+
+<div id="card-back-face"
+class="
+card-face
+card-back-face
+"
+>
+
+<div
+class="back-icon"
+>
+♡
+</div>
+
+<p>
+    Baby Shower
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- =================================================
+PARTES DEL SOBRE
+================================================== -->
+
+<div
+class="envelope-left"
+></div>
+
+<div
+class="envelope-right"
+></div>
+
+<div
+class="envelope-bottom"
+></div>
+
+
+<!-- Solapa -->
+
+<div
+class="flap"
+></div>
+
+
+<!-- Sello -->
+
+<div
+class="seal"
+>
+♡
+</div>
+
+
+</div>
+
+
+<div
+class="open-label"
+>
+TOCA PARA ABRIR
+</div>
+
+</div>
+
+</section>
+<audio id="bgMusic" loop preload="auto">
+    <source src="assets/youll-be-in-my-heart-piano-cover-phil-collins.mp3" type="audio/mpeg">
+</audio>
+<script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+<script>
+
+    document
+        .querySelectorAll('.btn-copy')
+        .forEach(button => {
+
+            button.addEventListener(
+                'click',
+                async function () {
+
+                    const id =
+                        this.dataset.copy;
+
+                    const element =
+                        document.getElementById(id);
+
+                    if (!element) {
+                        return;
+                    }
+
+
+                    const text =
+                        element
+                            .textContent
+                            .trim();
+
+
+                    try {
+
+                        await navigator
+                            .clipboard
+                            .writeText(text);
+
+
+                        const originalText =
+                            this.textContent;
+
+
+                        this.textContent =
+                            'COPIADO ✓';
+
+
+                        this.classList.add(
+                            'copied'
+                        );
+
+
+                        setTimeout(() => {
+
+                            this.textContent =
+                                originalText;
+
+                            this.classList.remove(
+                                'copied'
+                            );
+
+                        }, 1800);
+
+
+                    } catch (error) {
+
+                        /*
+                         * Fallback para algunos
+                         * navegadores móviles.
+                         */
+
+                        const textarea =
+                            document
+                                .createElement(
+                                    'textarea'
+                                );
+
+
+                        textarea.value =
+                            text;
+
+
+                        document.body
+                            .appendChild(
+                                textarea
+                            );
+
+
+                        textarea.select();
+
+
+                        document
+                            .execCommand(
+                                'copy'
+                            );
+
+
+                        textarea.remove();
+
+
+                        this.textContent =
+                            'COPIADO ✓';
+
+
+                        setTimeout(() => {
+
+                            this.textContent =
+                                'COPIAR';
+
+                        }, 1800);
+
+                    }
+
+                }
+            );
+
+        });
+
+</script>
+<script>
+    
+    const envelopeWrapper =
+    document.getElementById(
+    'envelopeWrapper'
+    );
+    
+    
+    const envelopeScreen =
+    document.getElementById(
+    'envelopeScreen'
+    );
+    
+    
+    const babyCard =
+    document.getElementById(
+    'babyCard'
+    );
+    
+    
+    let opened = false;
+    
+    
+    envelopeWrapper.addEventListener(
+    'click',
+    function () {
+        
+        if (opened) {
+            return;
+        }
+        
+        
+        opened = true;
+        
+        
+        /*
+        * =============================================
+        * PASO 1
+        * ABRIR SOBRE
+        * =============================================
+        */
+        
+        envelopeWrapper
+        .classList
+        .add(
+        'open'
+        );
+        
+        
+        /*
+        * =============================================
+        * PASO 2
+        * SACAR TARJETA
+        * =============================================
+        */
+        
+        setTimeout(() => {
+            
+            envelopeWrapper
+            .classList
+            .add(
+            'card-out'
+            );
+            
+        }, 700);
+        
+        
+        /*
+        * =============================================
+        * PASO 3
+        * GIRAR 360°
+        * =============================================
+        */
+        
+        setTimeout(() => {
+            
+            envelopeWrapper
+            .classList
+            .add(
+            'card-rotate'
+            );
+            
+        }, 2500);
+        
+        
+        /*
+        * =============================================
+        * PASO 4
+        * EXPANDIR
+        * =============================================
+        */
+        
+        setTimeout(() => {
+            
+            expandCard();
+            
+        }, 3550);
+        
+    }
+    );
+    
+    
+    /* =====================================================
+    EXPANDIR TARJETA
+    ===================================================== */
+    
+    function expandCard() {
+        
+        /*
+        * Obtener posición actual.
+        */
+        const rect =
+        babyCard
+        .getBoundingClientRect();
+        
+        
+        /*
+        * Mover la tarjeta al body.
+        */
+        document.body
+        .appendChild(
+        babyCard
+        );
+        
+        $('#card-back-face').css('transform', 'rotate(0deg)')
+        /*
+        * Convertirla temporalmente
+        * en fixed.
+        */
+       babyCard
+       .classList
+        .add(
+            'floating'
+        );
+        
+
+
+        /*
+        * Mantener la posición exacta.
+        */
+        babyCard.style.left =
+        `${rect.left}px`;
+        
+        
+        babyCard.style.top =
+        `${rect.top}px`;
+        
+        
+        babyCard.style.width =
+        `${rect.width}px`;
+        
+        
+        babyCard.style.height =
+        `${rect.height}px`;
+        
+        
+        babyCard.style.bottom =
+        'auto';
+        
+        
+        babyCard.style.transform =
+        'rotateX(360deg)';
+        
+        
+        /*
+        * Forzar reflow.
+        */
+        babyCard
+        .getBoundingClientRect();
+        
+        
+        requestAnimationFrame(() => {
+            
+            requestAnimationFrame(() => {
+                
+                
+                /*
+                * =========================================
+                * CENTRAR
+                * =========================================
+                */
+                
+                babyCard.style.left =
+                '50%';
+                
+                
+                babyCard.style.top =
+                '50%';
+                
+                
+                babyCard.style.width =
+                'min(92vw, 560px)';
+                
+                
+                babyCard.style.height =
+                'min(92dvh, 820px)';
+                
+                
+                babyCard.style.transform =
+                `
+                            translate(
+                                -50%,
+                                -50%
+                            )
+                            rotateX(
+                                360deg
+                            )
+                        `;
+                
+                
+                babyCard.style.borderRadius =
+                '8px';
+                
+                
+                babyCard.style.boxShadow =
+                `
+                            0 30px 90px
+                            rgba(
+                                65,
+                                35,
+                                30,
+                                .22
+                            )
+                        `;
+                
+                
+                /*
+                * =========================================
+                * DESAPARECER SOBRE
+                * =========================================
+                */
+                
+                setTimeout(() => {
+                    
+                    envelopeScreen
+                    .classList
+                    .add(
+                    'hide'
+                    );
+                    
+                }, 250);
+                
+                
+                /*
+                * =========================================
+                * MOSTRAR CONTENIDO
+                * =========================================
+                */
+                
+                setTimeout(() => {
+                    
+                    babyCard
+                    .classList
+                    .add(
+                    'expanded'
+                    );
+                    
+                }, 900);
+                
+
+                /*
+                * =========================================
+                * CONVERTIR A SCROLL NORMAL
+                * =========================================
+                */
+                
+                setTimeout(() => {
+                    
+                    
+                    /*
+                    * Quitar definitivamente
+                    * el sobre.
+                    */
+                    envelopeScreen
+                    .style
+                    .display =
+                    'none';
+                    
+                    
+                    /*
+                    * Limpiar estilos usados
+                    * en la animación.
+                    */
+                    babyCard.style.left =
+                    '';
+                    
+                    
+                    babyCard.style.top =
+                    '';
+                    
+                    
+                    babyCard.style.width =
+                    '';
+                    
+                    
+                    babyCard.style.height =
+                    '';
+                    
+                    
+                    babyCard.style.bottom =
+                    '';
+                    
+                    
+                    babyCard.style.transform =
+                    '';
+                    
+                    
+                    babyCard.style.borderRadius =
+                    '';
+                    
+                    
+                    babyCard.style.boxShadow =
+                    '';
+                    
+                    
+                    /*
+                    * Quitar fixed.
+                    */
+                    babyCard
+                    .classList
+                    .remove(
+                    'floating'
+                    );
+                    
+                    
+                    /*
+                    * Activar estado final.
+                    */
+                    babyCard
+                    .classList
+                    .add(
+                    'settled'
+                    );
+                    
+                    
+                    /*
+                    * Permitir scroll del body.
+                    */
+                    document.body
+                    .classList
+                    .add(
+                    'invitation-ready'
+                    );
+                    
+                    
+                    /*
+                    * Ir al inicio.
+                    */
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'instant'
+                    });
+                    
+                }, 1800);
+                
+            });
+            
+        });
+        
+    }
+    
+</script>
+<script>
+    const music = document.getElementById('bgMusic');
+    
+    const startMusic = async () => {
+        try {
+            music.currentTime = 03;
+            await music.play();
+            console.log('playing');
+            
+        } catch (e) {
+            console.log('Autoplay bloqueado', e);
+        }
+        
+        document.removeEventListener('click', startMusic);
+        document.removeEventListener('touchstart', startMusic);
+    };
+    
+    document.addEventListener('click', startMusic);
+    document.addEventListener('touchstart', startMusic);
+</script>
+</body>
+</html>
